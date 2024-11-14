@@ -1,0 +1,1945 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.50.3.4676/W32 for ARM               14/Nov/2024  21:37:03 #
+# Copyright 2007-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Exe\P24.out                    #
+#    Map file     =  E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\List\P24.map                   #
+#    Command line =  E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\CRC.o                      #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Calc_New.o                 #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\DbgTim.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Font.o                     #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Icon.o                     #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Kbd.o                      #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\LED.o                      #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\LevelMenu.o                #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\MakeOpis.o                 #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Manchester.o               #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Menu.o                     #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\MessageFlash.o             #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\MicroProg.o                #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Monitor.o                  #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\OS_Obj.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Screen1.o                  #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\SetupMenu.o                #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Spi.o                      #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\SysTimers.o                #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\TestScreen.o               #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\TimeMy.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\Triol.o                    #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\TskControl.o               #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\TskDRV.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\TskKbd.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\TskLcd.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\UART_manchester.o          #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\VersionPo.o                #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\dma.o                      #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\filemp.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\initOSfile.o               #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\main.o                     #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\misc.o                     #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\modbus.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\os_cpu_a.o                 #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\os_cpu_c.o                 #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\os_dbg.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\startup_stm32f2xx.o        #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_dbgmcu.o         #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_dma.o            #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_exti.o           #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_flash.o          #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_gpio.o           #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_it.o             #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_iwdg.o           #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_pwr.o            #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_rcc.o            #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_spi.o            #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_syscfg.o         #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_tim.o            #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_usart.o          #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\stm32f2xx_wwdg.o           #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\system_stm32f2xx.o         #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\uc1698.o                   #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Obj\ucos_ii.o --redirect       #
+#                    _Printf=_PrintfLarge --redirect _Scanf=_ScanfSmall -o    #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\Exe\P24.out --map              #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\Debug\List\P24.map --config          #
+#                    E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36 #
+#                    _010_WIRED_PULT\P24\stm32f2xx_flash.icf --semihosting    #
+#                    --entry __iar_program_start --vfe                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__Heap_Handler                = Basic
+__SystemLibrary               = DLib
+__dlib_dynamic_initialization = normal
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08010100 { ro section .intvec };
+"P1":  place in [from 0x08010000 to 0x080100ff] { ro section .versionsection };
+"P2":  place in [from 0x08010000 to 0x0805ffff] { ro };
+"P3":  place in [from 0x20000000 to 0x20020000] { rw, block CSTACK, block HEAP };
+
+  Section             Kind        Address     Size  Object
+  -------             ----        -------     ----  ------
+Absolute sections, part 1 of 2:                0xc
+  .rodata             const    0x08010000      0x4  main.o [1]
+  .rodata             const    0x08010004      0x4  main.o [1]
+  .rodata             const    0x08010008      0x4  main.o [1]
+                             - 0x0801000c      0xc
+
+Absolute sections, part 2 of 2:               0x14
+  .rodata             const    0x08010010     0x11  main.o [1]
+                             - 0x08010021     0x11
+
+"P1":                                         0x28
+  .versionsection     ro code  0x08010024     0x28  main.o [1]
+                             - 0x0801004c     0x28
+
+"P2", part 1 of 2:                             0x0
+  .rodata             const    0x0801004c      0x0  zero_init3.o [5]
+  .rodata             const    0x0801004c      0x0  lz77_init.o [5]
+
+"A1":                                        0x184
+  .intvec             ro code  0x08010100    0x184  startup_stm32f2xx.o [1]
+                             - 0x08010284    0x184
+
+"P2", part 2 of 2:                         0x2aeac
+  .text               ro code  0x08010284   0x8500  Menu.o [1]
+  .text               ro code  0x08018784    0x8a4  TskDRV.o [1]
+  .text               ro code  0x08019028    0x122  CRC.o [1]
+  .text               ro code  0x0801914a     0x16  modbus.o [1]
+  .text               ro code  0x08019160    0x4f4  Spi.o [1]
+  .text               ro code  0x08019654   0x1974  ucos_ii.o [1]
+  .text               ro code  0x0801afc8    0xbc0  MicroProg.o [1]
+  .text               ro code  0x0801bb88     0x18  Menu.o [1]
+  .text               ro code  0x0801bba0     0xba  main.o [1]
+  .text               ro code  0x0801bc5a     0x22  zero_init3.o [5]
+  .text               ro code  0x0801bc7c    0x308  Kbd.o [1]
+  .text               ro code  0x0801bf84      0xc  Menu.o [1]
+  .text               ro code  0x0801bf90    0xecc  LevelMenu.o [1]
+  .text               ro code  0x0801ce5c      0xa  SetupMenu.o [1]
+  .text               ro code  0x0801ce66      0xa  SetupMenu.o [1]
+  .text               ro code  0x0801ce70    0x580  MessageFlash.o [1]
+  .text               ro code  0x0801d3f0   0x21bc  SetupMenu.o [1]
+  .text               ro code  0x0801f5ac     0x5a  TimeMy.o [1]
+  .text               ro code  0x0801f606      0xa  xsprout.o [3]
+  .text               ro code  0x0801f610    0x5f8  MakeOpis.o [1]
+  .text               ro code  0x0801fc08     0x34  sprintf.o [3]
+  .text               ro code  0x0801fc3c    0x938  Monitor.o [1]
+  .text               ro code  0x08020574     0x14  Menu.o [1]
+  .text               ro code  0x08020588     0x16  SetupMenu.o [1]
+  .text               ro code  0x0802059e      0x8  Menu.o [1]
+  .rodata             const    0x080205a6      0x2  Menu.o [1]
+  .text               ro code  0x080205a8    0x3ac  uc1698.o [1]
+  .text               ro code  0x08020954    0x458  Menu.o [1]
+  .text               ro code  0x08020dac     0x10  Menu.o [1]
+  .text               ro code  0x08020dbc     0x36  strlen.o [5]
+  .rodata             const    0x08020df2      0x2  Menu.o [1]
+  .text               ro code  0x08020df4    0x174  Icon.o [1]
+  .text               ro code  0x08020f68     0xce  DbgTim.o [1]
+  .rodata             const    0x08021036      0x2  Menu.o [1]
+  .text               ro code  0x08021038     0x76  ABImemcpy.o [5]
+  .rodata             const    0x080210ae      0x2  Menu.o [1]
+  .text               ro code  0x080210b0     0x50  Menu.o [1]
+  .text               ro code  0x08021100    0xa88  filemp.o [1]
+  .text               ro code  0x08021b88     0x24  FltToU32.o [4]
+  .text               ro code  0x08021bac      0x8  abs.o [3]
+  .text               ro code  0x08021bb4     0xd8  FltMul.o [4]
+  .text               ro code  0x08021c8c     0x84  FltAdd.o [4]
+  .text               ro code  0x08021d10     0xfc  FltDiv.o [4]
+  .text               ro code  0x08021e0c     0x24  FltCmpLe.o [4]
+  .text               ro code  0x08021e30     0xe6  FltSub.o [4]
+  .rodata             const    0x08021f16      0x2  os_dbg.o [1]
+  .text               ro code  0x08021f18     0x4e  FltToDbl.o [4]
+  .rodata             const    0x08021f66      0x2  os_dbg.o [1]
+  .text               ro code  0x08021f68     0x44  FltToS32.o [4]
+  .text               ro code  0x08021fac     0x32  I32ToFlt.o [4]
+  .rodata             const    0x08021fde      0x2  os_dbg.o [1]
+  .text               ro code  0x08021fe0     0x94  Menu.o [1]
+  .text               ro code  0x08022074      0xc  Menu.o [1]
+  .text               ro code  0x08022080     0x16  Menu.o [1]
+  .text               ro code  0x08022096     0x1c  strcat.o [3]
+  .rodata             const    0x080220b2      0x2  os_dbg.o [1]
+  .text               ro code  0x080220b4     0x30  I32ToDbl.o [4]
+  .text               ro code  0x080220e4    0x246  DblDiv.o [4]
+  .rodata             const    0x0802232a      0x2  os_dbg.o [1]
+  .text               ro code  0x0802232c     0x90  DblToFlt.o [4]
+  .text               ro code  0x080223bc     0x58  Manchester.o [1]
+  .text               ro code  0x08022414    0x228  modbus.o [1]
+  .text               ro code  0x0802263c      0x6  ABImemclr4.o [5]
+  .rodata             const    0x08022642      0x2  os_dbg.o [1]
+  .text               ro code  0x08022644    0x1c0  stm32f2xx_rcc.o [1]
+  .text               ro code  0x08022804    0x10c  stm32f2xx_gpio.o [1]
+  .text               ro code  0x08022910     0x54  stm32f2xx_syscfg.o [1]
+  .text               ro code  0x08022964     0xcc  stm32f2xx_exti.o [1]
+  .text               ro code  0x08022a30     0x90  misc.o [1]
+  .text               ro code  0x08022ac0     0x8e  stm32f2xx_spi.o [1]
+  .rodata             const    0x08022b4e      0x2  os_dbg.o [1]
+  CODE                ro code  0x08022b50     0xa0  os_cpu_a.o [1]
+  .text               ro code  0x08022bf0    0x11c  os_cpu_c.o [1]
+  .text               ro code  0x08022d0c    0x1cc  os_dbg.o [1]
+  .text               ro code  0x08022ed8    0x238  stm32f2xx_flash.o [1]
+  .text               ro code  0x08023110    0x434  UART_manchester.o [1]
+  .text               ro code  0x08023544    0x110  dma.o [1]
+  .text               ro code  0x08023654    0x1e0  initOSfile.o [1]
+  .text               ro code  0x08023834    0x104  SetupMenu.o [1]
+  .text               ro code  0x08023938     0x62  memcmp.o [5]
+  .rodata             const    0x0802399a      0x2  os_dbg.o [1]
+  .text               ro code  0x0802399c    0xeee  xprintflarge.o [3]
+  .rodata             const    0x0802488a      0x2  os_dbg.o [1]
+  .text               ro code  0x0802488c     0x44  strcpy.o [5]
+  .text               ro code  0x080248d0     0x24  FltCmpGe.o [4]
+  .text               ro code  0x080248f4     0x66  ABImemset.o [5]
+  .rodata             const    0x0802495a      0x2  os_dbg.o [1]
+  .text               ro code  0x0802495c    0x1bc  stm32f2xx_tim.o [1]
+  .text               ro code  0x08024b18     0x2c  strstr.o [3]
+  .text               ro code  0x08024b44     0x44  stm32f2xx_dbgmcu.o [1]
+  .text               ro code  0x08024b88    0x1a2  DblMul.o [4]
+  .rodata             const    0x08024d2a      0x2  os_dbg.o [1]
+  .text               ro code  0x08024d2c    0x180  DblSub.o [4]
+  .text               ro code  0x08024eac     0x58  DblToI32.o [4]
+  .text               ro code  0x08024f04     0x2e  Manchester.o [1]
+  .rodata             const    0x08024f32      0x2  os_dbg.o [1]
+  .text               ro code  0x08024f34     0x20  Manchester.o [1]
+  .text               ro code  0x08024f54     0x32  ABImemset48.o [5]
+  .rodata             const    0x08024f86      0x2  os_dbg.o [1]
+  .text               ro code  0x08024f88     0x30  SysTimers.o [1]
+  .text               ro code  0x08024fb8     0xd0  stm32f2xx_dma.o [1]
+  .text               ro code  0x08025088    0x1b0  stm32f2xx_usart.o [1]
+  .text               ro code  0x08025238     0x20  UART_manchester.o [1]
+  .text               ro code  0x08025258     0x28  UART_manchester.o [1]
+  .text               ro code  0x08025280     0x2c  UART_manchester.o [1]
+  .text               ro code  0x080252ac     0x20  UART_manchester.o [1]
+  .text               ro code  0x080252cc     0x20  xmbtowc.o [3]
+  .text               ro code  0x080252ec     0x16  strchr.o [5]
+  .rodata             const    0x08025302      0x2  os_dbg.o [1]
+  .text               ro code  0x08025304     0x58  memchr.o [5]
+  .text               ro code  0x0802535c      0xa  xmbcurmax.o [3]
+  .rodata             const    0x08025366      0x2  os_dbg.o [1]
+  .text               ro code  0x08025368     0xb0  xxmemxmalloc.o [3]
+  .text               ro code  0x08025418     0x1a  xwctomb.o [3]
+  .rodata             const    0x08025432      0x2  os_dbg.o [1]
+  .text               ro code  0x08025434     0x80  xxmemxfree.o [3]
+  .text               ro code  0x080254b4     0xee  I64DivMod.o [5]
+  .text               ro code  0x080255a2     0x42  xdnorm.o [4]
+  .text               ro code  0x080255e4     0x2e  DblCmpLe.o [4]
+  .rodata             const    0x08025612      0x2  os_dbg.o [1]
+  .text               ro code  0x08025614     0x6c  localeconv.o [3]
+  .text               ro code  0x08025680      0xe  div.o [3]
+  .rodata             const    0x0802568e      0x2  os_dbg.o [1]
+  .text               ro code  0x08025690     0xd4  DblAdd.o [4]
+  .text               ro code  0x08025764     0x14  setlocale.o [3]
+  .text               ro code  0x08025778     0x60  xencoding_sb.o [3]
+  .text               ro code  0x080257d8     0x2c  xgetmemchunk.o [3]
+  .text               ro code  0x08025804      0x2  I64DivZer.o [5]
+  .text               ro code  0x08025806      0x2  xtls.o [3]
+  .rodata             const    0x08025808   0x7d00  Screen1.o [1]
+  .rodata             const    0x0802d508   0x6978  Font.o [1]
+  .rodata             const    0x08033e80   0x2870  Font.o [1]
+  .rodata             const    0x080366f0   0x1c20  Font.o [1]
+  .rodata             const    0x08038310    0x790  MicroProg.o [1]
+  .rodata             const    0x08038aa0    0x200  CRC.o [1]
+  .text               ro code  0x08038ca0    0x1e4  TskKbd.o [1]
+  .text               ro code  0x08038e84    0x1a4  lz77_init.o [5]
+  .text               ro code  0x08039028      0x6  abort.o [3]
+  .rodata             const    0x0803902e      0x2  os_dbg.o [1]
+  .text               ro code  0x08039030     0x14  exit.o [6]
+  .rodata             const    0x08039044    0x140  Icon.o [1]
+  .text               ro code  0x08039184    0x124  system_stm32f2xx.o [1]
+  .rodata             const    0x080392a8    0x114  Menu.o [1]
+  .rodata             const    0x080393bc    0x100  ucos_ii.o [1]
+  .text               ro code  0x080394bc     0xfc  VersionPo.o [1]
+  .text               ro code  0x080395b8     0xcc  LED.o [1]
+  .rodata             const    0x08039684     0xa0  Icon.o [1]
+  .text               ro code  0x08039724     0x88  TskLcd.o [1]
+  .rodata             const    0x080397ac     0x80  Icon.o [1]
+  .rodata             const    0x0803982c     0x80  Icon.o [1]
+  .rodata             const    0x080398ac     0x80  Icon.o [1]
+  .rodata             const    0x0803992c     0x80  Icon.o [1]
+  .rodata             const    0x080399ac     0x60  Icon.o [1]
+  .rodata             const    0x08039a0c     0x60  Icon.o [1]
+  .rodata             const    0x08039a6c     0x54  Calc_New.o [1]
+  .rodata             const    0x08039ac0     0x38  Menu.o [1]
+  .rodata             const    0x08039af8     0x38  Menu.o [1]
+  .rodata             const    0x08039b30     0x38  Menu.o [1]
+  .rodata             const    0x08039b68     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039b90     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039bb8     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039be0     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039c08     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039c30     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039c58     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039c80     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039ca8     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039cd0     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039cf8     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039d20     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039d48     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039d70     0x28  MessageFlash.o [1]
+  .rodata             const    0x08039d98     0x28  MicroProg.o [1]
+  .text               ro code  0x08039dc0     0x28  data_init.o [5]
+  .rodata             const    0x08039de8     0x24  Menu.o [1]
+  .rodata             const    0x08039e0c     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039e30     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039e54     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039e78     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039e9c     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039ec0     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039ee4     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039f08     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039f2c     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039f50     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039f74     0x24  MessageFlash.o [1]
+  .rodata             const    0x08039f98     0x24  MessageFlash.o [1]
+  .iar.init_table     const    0x08039fbc     0x2c  - Linker created -
+  .rodata             const    0x08039fe8     0x20  Icon.o [1]
+  .rodata             const    0x0803a008     0x20  Icon.o [1]
+  .rodata             const    0x0803a028     0x20  Icon.o [1]
+  .rodata             const    0x0803a048     0x20  Icon.o [1]
+  .rodata             const    0x0803a068     0x20  Icon.o [1]
+  .rodata             const    0x0803a088     0x20  Icon.o [1]
+  .rodata             const    0x0803a0a8     0x20  Icon.o [1]
+  .rodata             const    0x0803a0c8     0x20  Icon.o [1]
+  .rodata             const    0x0803a0e8     0x20  Icon.o [1]
+  .rodata             const    0x0803a108     0x20  Icon.o [1]
+  .rodata             const    0x0803a128     0x20  Icon.o [1]
+  .rodata             const    0x0803a148     0x20  Icon.o [1]
+  .rodata             const    0x0803a168     0x20  LevelMenu.o [1]
+  .rodata             const    0x0803a188     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a1a8     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a1c8     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a1e8     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a208     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a228     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a248     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a268     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a288     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a2a8     0x20  MessageFlash.o [1]
+  .rodata             const    0x0803a2c8     0x1c  Menu.o [1]
+  .rodata             const    0x0803a2e4     0x1c  Menu.o [1]
+  .rodata             const    0x0803a300     0x1c  Menu.o [1]
+  .rodata             const    0x0803a31c     0x1c  Menu.o [1]
+  .rodata             const    0x0803a338     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a354     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a370     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a38c     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a3a8     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a3c4     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a3e0     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a3fc     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a418     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a434     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a450     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a46c     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a488     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a4a4     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a4c0     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a4dc     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a4f8     0x1c  MessageFlash.o [1]
+  .rodata             const    0x0803a514     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a52c     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a544     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a55c     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a574     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a58c     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a5a4     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a5bc     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a5d4     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a5ec     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a604     0x18  MessageFlash.o [1]
+  .rodata             const    0x0803a61c     0x18  initOSfile.o [1]
+  .text               ro code  0x0803a634     0x16  TskControl.o [1]
+  .rodata             const    0x0803a64a      0x2  os_dbg.o [1]
+  .text               ro code  0x0803a64c     0x16  cmain.o [5]
+  .text               ro code  0x0803a662      0x4  low_level_init.o [3]
+  .text               ro code  0x0803a666      0x4  exit.o [3]
+  .rodata             const    0x0803a66a      0x2  os_dbg.o [1]
+  .text               ro code  0x0803a66c      0xa  cexit.o [5]
+  .rodata             const    0x0803a676      0x2  os_dbg.o [1]
+  .rodata             const    0x0803a678     0x14  LevelMenu.o [1]
+  .rodata             const    0x0803a68c     0x14  Menu.o [1]
+  .rodata             const    0x0803a6a0     0x14  Menu.o [1]
+  .rodata             const    0x0803a6b4     0x14  MessageFlash.o [1]
+  .rodata             const    0x0803a6c8     0x14  MessageFlash.o [1]
+  .rodata             const    0x0803a6dc     0x14  MessageFlash.o [1]
+  .rodata             const    0x0803a6f0     0x14  MessageFlash.o [1]
+  .rodata             const    0x0803a704     0x14  MessageFlash.o [1]
+  .rodata             const    0x0803a718     0x14  Spi.o [1]
+  .rodata             const    0x0803a72c     0x14  initOSfile.o [1]
+  .rodata             const    0x0803a740     0x14  ucos_ii.o [1]
+  .rodata             const    0x0803a754     0x14  ucos_ii.o [1]
+  .rodata             const    0x0803a768     0x10  LevelMenu.o [1]
+  .rodata             const    0x0803a778     0x10  LevelMenu.o [1]
+  .rodata             const    0x0803a788     0x10  LevelMenu.o [1]
+  .rodata             const    0x0803a798     0x10  LevelMenu.o [1]
+  .rodata             const    0x0803a7a8     0x10  Manchester.o [1]
+  .rodata             const    0x0803a7b8     0x10  Menu.o [1]
+  .rodata             const    0x0803a7c8     0x10  Menu.o [1]
+  .rodata             const    0x0803a7d8     0x10  Menu.o [1]
+  .rodata             const    0x0803a7e8     0x10  Menu.o [1]
+  .rodata             const    0x0803a7f8     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a808     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a818     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a828     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a838     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a848     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a858     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a868     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a878     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a888     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a898     0x10  MessageFlash.o [1]
+  .rodata             const    0x0803a8a8     0x10  SetupMenu.o [1]
+  .rodata             const    0x0803a8b8     0x10  SetupMenu.o [1]
+  .rodata             const    0x0803a8c8     0x10  VersionPo.o [1]
+  .rodata             const    0x0803a8d8     0x10  VersionPo.o [1]
+  .rodata             const    0x0803a8e8     0x10  ucos_ii.o [1]
+  .rodata             const    0x0803a8f8     0x10  ucos_ii.o [1]
+  .rodata             const    0x0803a908     0x10  ucos_ii.o [1]
+  .text               ro code  0x0803a918     0x10  startup_stm32f2xx.o [1]
+  .rodata             const    0x0803a928      0xc  LevelMenu.o [1]
+  .rodata             const    0x0803a934      0xc  LevelMenu.o [1]
+  .rodata             const    0x0803a940      0xc  LevelMenu.o [1]
+  .rodata             const    0x0803a94c      0xc  LevelMenu.o [1]
+  .rodata             const    0x0803a958      0xc  LevelMenu.o [1]
+  .rodata             const    0x0803a964      0xc  LevelMenu.o [1]
+  .rodata             const    0x0803a970      0xc  Menu.o [1]
+  .rodata             const    0x0803a97c      0xc  Menu.o [1]
+  .rodata             const    0x0803a988      0xc  Menu.o [1]
+  .rodata             const    0x0803a994      0xc  Menu.o [1]
+  .rodata             const    0x0803a9a0      0xc  Menu.o [1]
+  .rodata             const    0x0803a9ac      0xc  Menu.o [1]
+  .rodata             const    0x0803a9b8      0xc  Menu.o [1]
+  .rodata             const    0x0803a9c4      0xc  MessageFlash.o [1]
+  .rodata             const    0x0803a9d0      0xc  MessageFlash.o [1]
+  .rodata             const    0x0803a9dc      0xc  MessageFlash.o [1]
+  .rodata             const    0x0803a9e8      0xc  SetupMenu.o [1]
+  .rodata             const    0x0803a9f4      0xc  TskLcd.o [1]
+  .rodata             const    0x0803aa00      0xc  TskLcd.o [1]
+  .rodata             const    0x0803aa0c      0xc  VersionPo.o [1]
+  .rodata             const    0x0803aa18      0xc  initOSfile.o [1]
+  .rodata             const    0x0803aa24      0xc  initOSfile.o [1]
+  .rodata             const    0x0803aa30      0xc  initOSfile.o [1]
+  .rodata             const    0x0803aa3c      0xc  initOSfile.o [1]
+  .rodata             const    0x0803aa48      0xc  initOSfile.o [1]
+  .rodata             const    0x0803aa54      0xc  initOSfile.o [1]
+  .text               ro code  0x0803aa60      0xc  stm32f2xx_it.o [1]
+  .text               ro code  0x0803aa6c      0xc  cstartup_M.o [5]
+  .text               ro code  0x0803aa78      0xa  Menu.o [1]
+  .text               ro code  0x0803aa82      0xa  Menu.o [1]
+  .text               ro code  0x0803aa8c      0xa  Menu.o [1]
+  .rodata             const    0x0803aa96      0x2  os_dbg.o [1]
+  .rodata             const    0x0803aa98      0x8  LevelMenu.o [1]
+  .rodata             const    0x0803aaa0      0x8  LevelMenu.o [1]
+  .rodata             const    0x0803aaa8      0x8  LevelMenu.o [1]
+  .rodata             const    0x0803aab0      0x8  Menu.o [1]
+  .rodata             const    0x0803aab8      0x8  Menu.o [1]
+  .rodata             const    0x0803aac0      0x8  Menu.o [1]
+  .rodata             const    0x0803aac8      0x8  Menu.o [1]
+  .rodata             const    0x0803aad0      0x8  Menu.o [1]
+  .rodata             const    0x0803aad8      0x8  Menu.o [1]
+  .rodata             const    0x0803aae0      0x8  Menu.o [1]
+  .rodata             const    0x0803aae8      0x8  Menu.o [1]
+  .rodata             const    0x0803aaf0      0x8  Menu.o [1]
+  .rodata             const    0x0803aaf8      0x8  Menu.o [1]
+  .rodata             const    0x0803ab00      0x8  Menu.o [1]
+  .rodata             const    0x0803ab08      0x8  Menu.o [1]
+  .rodata             const    0x0803ab10      0x8  Menu.o [1]
+  .rodata             const    0x0803ab18      0x8  Menu.o [1]
+  .rodata             const    0x0803ab20      0x8  Menu.o [1]
+  .rodata             const    0x0803ab28      0x8  Menu.o [1]
+  .rodata             const    0x0803ab30      0x8  Menu.o [1]
+  .rodata             const    0x0803ab38      0x8  Menu.o [1]
+  .rodata             const    0x0803ab40      0x8  Menu.o [1]
+  .rodata             const    0x0803ab48      0x8  Menu.o [1]
+  .rodata             const    0x0803ab50      0x8  Menu.o [1]
+  .rodata             const    0x0803ab58      0x8  Menu.o [1]
+  .rodata             const    0x0803ab60      0x8  Menu.o [1]
+  .rodata             const    0x0803ab68      0x8  Menu.o [1]
+  .rodata             const    0x0803ab70      0x8  Menu.o [1]
+  .rodata             const    0x0803ab78      0x8  Menu.o [1]
+  .rodata             const    0x0803ab80      0x8  Menu.o [1]
+  .rodata             const    0x0803ab88      0x8  Menu.o [1]
+  .rodata             const    0x0803ab90      0x8  Menu.o [1]
+  .rodata             const    0x0803ab98      0x8  Menu.o [1]
+  .rodata             const    0x0803aba0      0x8  Menu.o [1]
+  .rodata             const    0x0803aba8      0x8  Menu.o [1]
+  .rodata             const    0x0803abb0      0x8  Menu.o [1]
+  .rodata             const    0x0803abb8      0x8  Menu.o [1]
+  .rodata             const    0x0803abc0      0x8  Menu.o [1]
+  .rodata             const    0x0803abc8      0x8  Menu.o [1]
+  .rodata             const    0x0803abd0      0x8  Menu.o [1]
+  .rodata             const    0x0803abd8      0x8  Menu.o [1]
+  .rodata             const    0x0803abe0      0x8  Menu.o [1]
+  .rodata             const    0x0803abe8      0x8  Menu.o [1]
+  .rodata             const    0x0803abf0      0x8  Menu.o [1]
+  .rodata             const    0x0803abf8      0x8  Menu.o [1]
+  .rodata             const    0x0803ac00      0x8  Menu.o [1]
+  .rodata             const    0x0803ac08      0x8  MessageFlash.o [1]
+  .rodata             const    0x0803ac10      0x8  MessageFlash.o [1]
+  .rodata             const    0x0803ac18      0x8  MessageFlash.o [1]
+  .rodata             const    0x0803ac20      0x8  MessageFlash.o [1]
+  .rodata             const    0x0803ac28      0x8  MessageFlash.o [1]
+  .rodata             const    0x0803ac30      0x8  MicroProg.o [1]
+  .rodata             const    0x0803ac38      0x8  MicroProg.o [1]
+  .rodata             const    0x0803ac40      0x8  MicroProg.o [1]
+  .rodata             const    0x0803ac48      0x8  MicroProg.o [1]
+  .rodata             const    0x0803ac50      0x8  MicroProg.o [1]
+  .rodata             const    0x0803ac58      0x8  SetupMenu.o [1]
+  .rodata             const    0x0803ac60      0x8  SetupMenu.o [1]
+  .rodata             const    0x0803ac68      0x8  SetupMenu.o [1]
+  .rodata             const    0x0803ac70      0x8  SetupMenu.o [1]
+  .rodata             const    0x0803ac78      0x8  SetupMenu.o [1]
+  .rodata             const    0x0803ac80      0x8  SetupMenu.o [1]
+  .rodata             const    0x0803ac88      0x8  filemp.o [1]
+  .rodata             const    0x0803ac90      0x8  initOSfile.o [1]
+  .rodata             const    0x0803ac98      0x8  initOSfile.o [1]
+  .rodata             const    0x0803aca0      0x8  initOSfile.o [1]
+  .rodata             const    0x0803aca8      0x8  initOSfile.o [1]
+  .rodata             const    0x0803acb0      0x4  Menu.o [1]
+  .rodata             const    0x0803acb4      0x4  Menu.o [1]
+  .rodata             const    0x0803acb8      0x4  Menu.o [1]
+  .rodata             const    0x0803acbc      0x4  Menu.o [1]
+  .rodata             const    0x0803acc0      0x4  Menu.o [1]
+  .rodata             const    0x0803acc4      0x4  Menu.o [1]
+  .rodata             const    0x0803acc8      0x4  Menu.o [1]
+  .rodata             const    0x0803accc      0x4  Menu.o [1]
+  .rodata             const    0x0803acd0      0x4  Menu.o [1]
+  .rodata             const    0x0803acd4      0x4  Menu.o [1]
+  .rodata             const    0x0803acd8      0x4  Menu.o [1]
+  .rodata             const    0x0803acdc      0x4  Menu.o [1]
+  .rodata             const    0x0803ace0      0x4  Menu.o [1]
+  .rodata             const    0x0803ace4      0x4  Menu.o [1]
+  .rodata             const    0x0803ace8      0x4  Menu.o [1]
+  .rodata             const    0x0803acec      0x4  Menu.o [1]
+  .rodata             const    0x0803acf0      0x4  Menu.o [1]
+  .rodata             const    0x0803acf4      0x4  Menu.o [1]
+  .rodata             const    0x0803acf8      0x4  Menu.o [1]
+  .rodata             const    0x0803acfc      0x4  Menu.o [1]
+  .rodata             const    0x0803ad00      0x4  Menu.o [1]
+  .rodata             const    0x0803ad04      0x4  Menu.o [1]
+  .rodata             const    0x0803ad08      0x4  Menu.o [1]
+  .rodata             const    0x0803ad0c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad10      0x4  Menu.o [1]
+  .rodata             const    0x0803ad14      0x4  Menu.o [1]
+  .rodata             const    0x0803ad18      0x4  Menu.o [1]
+  .rodata             const    0x0803ad1c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad20      0x4  Menu.o [1]
+  .rodata             const    0x0803ad24      0x4  Menu.o [1]
+  .rodata             const    0x0803ad28      0x4  Menu.o [1]
+  .rodata             const    0x0803ad2c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad30      0x4  Menu.o [1]
+  .rodata             const    0x0803ad34      0x4  Menu.o [1]
+  .rodata             const    0x0803ad38      0x4  Menu.o [1]
+  .rodata             const    0x0803ad3c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad40      0x4  Menu.o [1]
+  .rodata             const    0x0803ad44      0x4  Menu.o [1]
+  .rodata             const    0x0803ad48      0x4  Menu.o [1]
+  .rodata             const    0x0803ad4c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad50      0x4  Menu.o [1]
+  .rodata             const    0x0803ad54      0x4  Menu.o [1]
+  .rodata             const    0x0803ad58      0x4  Menu.o [1]
+  .rodata             const    0x0803ad5c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad60      0x4  Menu.o [1]
+  .rodata             const    0x0803ad64      0x4  Menu.o [1]
+  .rodata             const    0x0803ad68      0x4  Menu.o [1]
+  .rodata             const    0x0803ad6c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad70      0x4  Menu.o [1]
+  .rodata             const    0x0803ad74      0x4  Menu.o [1]
+  .rodata             const    0x0803ad78      0x4  Menu.o [1]
+  .rodata             const    0x0803ad7c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad80      0x4  Menu.o [1]
+  .rodata             const    0x0803ad84      0x4  Menu.o [1]
+  .rodata             const    0x0803ad88      0x4  Menu.o [1]
+  .rodata             const    0x0803ad8c      0x4  Menu.o [1]
+  .rodata             const    0x0803ad90      0x4  Menu.o [1]
+  .rodata             const    0x0803ad94      0x4  MessageFlash.o [1]
+  .rodata             const    0x0803ad98      0x4  MessageFlash.o [1]
+  .rodata             const    0x0803ad9c      0x4  os_dbg.o [1]
+  .text               ro code  0x0803ada0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ada4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ada8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adac      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adb0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adb4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adb8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adbc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adc0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adc4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adc8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adcc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803add0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803add4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803add8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803addc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ade0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ade4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ade8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adec      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adf0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adf4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adf8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803adfc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae00      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae04      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae08      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae0c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae10      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae14      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae18      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae1c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae20      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae24      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae28      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae2c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae30      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae34      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae38      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae3c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae40      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae44      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae48      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae4c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae50      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae54      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae58      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae5c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae60      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae64      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae68      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae6c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae70      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae74      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae78      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae7c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae80      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae84      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae88      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae8c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae90      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae94      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae98      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803ae9c      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aea0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aea4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aea8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aeac      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aeb0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aeb4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aeb8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aebc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aec0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aec4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aec8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aecc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aed0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aed4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aed8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aedc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aee0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aee4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aee8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aeec      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aef0      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aef4      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aef8      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803aefc      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803af00      0x4  startup_stm32f2xx.o [1]
+  .text               ro code  0x0803af04      0x4  startup_stm32f2xx.o [1]
+  .rodata             const    0x0803af08      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af0a      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af0c      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af0e      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af10      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af12      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af14      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af16      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af18      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af1a      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af1c      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af1e      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af20      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af22      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af24      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af26      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af28      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af2a      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af2c      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af2e      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af30      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af32      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af34      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af36      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af38      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af3a      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af3c      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af3e      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af40      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af42      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af44      0x2  os_dbg.o [1]
+  .rodata             const    0x0803af46      0x1  Menu.o [1]
+  .rodata             const    0x0803af47      0x1  MessageFlash.o [1]
+  Initializer bytes   ro data  0x0803af48    0x1e8  <for P3 s0>
+                             - 0x0803b130  0x2aeac
+
+"P3", part 1 of 3:                           0x414
+  P3 s0                        0x20000000    0x412  <Init block>
+    .data             inited   0x20000000    0x118  MessageFlash.o [1]
+    .data             inited   0x20000118     0xa0  DbgTim.o [1]
+    __DLIB_PERTHREAD  inited   0x200001b8     0x88  localeconv.o [3]
+    __DLIB_PERTHREAD  inited   0x20000240     0x74  setlocale.o [3]
+    .data             inited   0x200002b4     0x5c  MessageFlash.o [1]
+    .data             inited   0x20000310     0x38  Menu.o [1]
+    .data             inited   0x20000348     0x2c  MessageFlash.o [1]
+    .data             inited   0x20000374     0x2c  UART_manchester.o [1]
+    .data             inited   0x200003a0     0x20  Menu.o [1]
+    .data             inited   0x200003c0     0x20  Menu.o [1]
+    .data             inited   0x200003e0     0x10  stm32f2xx_rcc.o [1]
+    .data             inited   0x200003f0      0x8  Font.o [1]
+    .data             inited   0x200003f8      0x8  Font.o [1]
+    .data             inited   0x20000400      0x8  Font.o [1]
+    .data             inited   0x20000408      0x4  MessageFlash.o [1]
+    .data             inited   0x2000040c      0x4  system_stm32f2xx.o [1]
+    .data             inited   0x20000410      0x2  SetupMenu.o [1]
+                             - 0x20000412    0x412
+
+"P3", part 2 of 3:                          0x7334
+  .bss                zero     0x20000414   0x1260  Menu.o [1]
+  .bss                zero     0x20001674   0x1180  MessageFlash.o [1]
+  .bss                zero     0x200027f4    0xc80  Menu.o [1]
+  .bss                zero     0x20003474    0xc80  uc1698.o [1]
+  .bss                zero     0x200040f4    0x7d0  Menu.o [1]
+  .bss                zero     0x200048c4    0x5c0  MessageFlash.o [1]
+  .bss                zero     0x20004e84    0x300  ucos_ii.o [1]
+  .bss                zero     0x20005184    0x2f8  ucos_ii.o [1]
+  .bss                zero     0x2000547c    0x280  ucos_ii.o [1]
+  .bss                zero     0x200056fc    0x248  Menu.o [1]
+  .bss                zero     0x20005944    0x228  Menu.o [1]
+  .bss                zero     0x20005b6c    0x200  UART_manchester.o [1]
+  .bss                zero     0x20005d6c    0x200  ucos_ii.o [1]
+  .bss                zero     0x20005f6c    0x200  ucos_ii.o [1]
+  .bss                zero     0x2000616c    0x200  ucos_ii.o [1]
+  .bss                zero     0x2000636c    0x190  MakeOpis.o [1]
+  .bss                zero     0x200064fc    0x190  Menu.o [1]
+  .bss                zero     0x2000668c    0x190  Menu.o [1]
+  .bss                zero     0x2000681c    0x190  Menu.o [1]
+  .bss                zero     0x200069ac    0x190  Menu.o [1]
+  .bss                zero     0x20006b3c    0x100  Menu.o [1]
+  .bss                zero     0x20006c3c    0x100  modbus.o [1]
+  .bss                zero     0x20006d3c    0x100  ucos_ii.o [1]
+  .bss                zero     0x20006e3c     0xf0  Menu.o [1]
+  .bss                zero     0x20006f2c     0xc8  Menu.o [1]
+  .bss                zero     0x20006ff4     0xc0  TskDRV.o [1]
+  .bss                zero     0x200070b4     0xb0  MessageFlash.o [1]
+  .bss                zero     0x20007164     0x98  Menu.o [1]
+  .bss                zero     0x200071fc     0x80  Menu.o [1]
+  .bss                zero     0x2000727c     0x80  TskDRV.o [1]
+  .bss                zero     0x200072fc     0x78  ucos_ii.o [1]
+  .bss                zero     0x20007374     0x5c  Menu.o [1]
+  .bss                zero     0x200073d0     0x54  MakeOpis.o [1]
+  .bss                zero     0x20007424     0x54  Menu.o [1]
+  .bss                zero     0x20007478     0x40  ucos_ii.o [1]
+  .bss                zero     0x200074b8     0x38  SetupMenu.o [1]
+  .bss                zero     0x200074f0     0x34  Menu.o [1]
+  .bss                zero     0x20007524     0x28  Menu.o [1]
+  .bss                zero     0x2000754c     0x20  TskDRV.o [1]
+  .bss                zero     0x2000756c     0x20  TskDRV.o [1]
+  .bss                zero     0x2000758c     0x20  TskDRV.o [1]
+  .bss                zero     0x200075ac     0x20  TskDRV.o [1]
+  .bss                zero     0x200075cc     0x20  UART_manchester.o [1]
+  .bss                zero     0x200075ec     0x18  Kbd.o [1]
+  .bss                zero     0x20007604     0x10  Menu.o [1]
+  .bss                zero     0x20007614     0x10  TskDRV.o [1]
+  .bss                zero     0x20007624      0xc  Menu.o [1]
+  .bss                zero     0x20007630      0xc  MessageFlash.o [1]
+  .bss                zero     0x2000763c      0xc  TskKbd.o [1]
+  .bss                zero     0x20007648      0xc  TskKbd.o [1]
+  .bss                zero     0x20007654      0x8  Menu.o [1]
+  .bss                zero     0x2000765c      0x8  SetupMenu.o [1]
+  .bss                zero     0x20007664      0x8  ucos_ii.o [1]
+  .bss                zero     0x2000766c      0x8  xxmemxmalloc.o [3]
+  .bss                zero     0x20007674      0x4  Kbd.o [1]
+  .bss                zero     0x20007678      0x4  LED.o [1]
+  .bss                zero     0x2000767c      0x4  MakeOpis.o [1]
+  .bss                zero     0x20007680      0x4  Menu.o [1]
+  .bss                zero     0x20007684      0x4  Menu.o [1]
+  .bss                zero     0x20007688      0x4  Menu.o [1]
+  .bss                zero     0x2000768c      0x4  Menu.o [1]
+  .bss                zero     0x20007690      0x4  Menu.o [1]
+  .bss                zero     0x20007694      0x4  Menu.o [1]
+  .bss                zero     0x20007698      0x4  Menu.o [1]
+  .bss                zero     0x2000769c      0x4  MicroProg.o [1]
+  .bss                zero     0x200076a0      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076a4      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076a8      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076ac      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076b0      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076b4      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076b8      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076bc      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076c0      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076c4      0x4  OS_Obj.o [1]
+  .bss                zero     0x200076c8      0x4  SetupMenu.o [1]
+  .bss                zero     0x200076cc      0x4  TskKbd.o [1]
+  .bss                zero     0x200076d0      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076d4      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076d8      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076dc      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076e0      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076e4      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076e8      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076ec      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076f0      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076f4      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076f8      0x4  ucos_ii.o [1]
+  .bss                zero     0x200076fc      0x4  ucos_ii.o [1]
+  .bss                zero     0x20007700      0x4  ucos_ii.o [1]
+  .bss                zero     0x20007704      0x4  ucos_ii.o [1]
+  .bss                zero     0x20007708      0x4  ucos_ii.o [1]
+  .bss                zero     0x2000770c      0x4  xgetmemchunk.o [3]
+  .bss                zero     0x20007710      0x2  Menu.o [1]
+  .bss                zero     0x20007712      0x2  Menu.o [1]
+  .bss                zero     0x20007714      0x2  Menu.o [1]
+  .bss                zero     0x20007716      0x2  Menu.o [1]
+  .bss                zero     0x20007718      0x2  Menu.o [1]
+  .bss                zero     0x2000771a      0x2  Menu.o [1]
+  .bss                zero     0x2000771c      0x2  Menu.o [1]
+  .bss                zero     0x2000771e      0x2  Menu.o [1]
+  .bss                zero     0x20007720      0x2  Menu.o [1]
+  .bss                zero     0x20007722      0x2  Menu.o [1]
+  .bss                zero     0x20007724      0x2  SetupMenu.o [1]
+  .bss                zero     0x20007726      0x2  SetupMenu.o [1]
+  .bss                zero     0x20007728      0x2  SysTimers.o [1]
+  .bss                zero     0x2000772a      0x2  os_cpu_c.o [1]
+  .bss                zero     0x2000772c      0x2  ucos_ii.o [1]
+  .bss                zero     0x2000772e      0x2  ucos_ii.o [1]
+  .bss                zero     0x20007730      0x1  Menu.o [1]
+  .bss                zero     0x20007731      0x1  Menu.o [1]
+  .bss                zero     0x20007732      0x1  Menu.o [1]
+  .bss                zero     0x20007733      0x1  Menu.o [1]
+  .bss                zero     0x20007734      0x1  TskKbd.o [1]
+  .bss                zero     0x20007735      0x1  TskKbd.o [1]
+  .bss                zero     0x20007736      0x1  TskKbd.o [1]
+  .bss                zero     0x20007737      0x1  TskKbd.o [1]
+  .bss                zero     0x20007738      0x1  UART_manchester.o [1]
+  .bss                zero     0x20007739      0x1  dma.o [1]
+  .bss                zero     0x2000773a      0x1  uc1698.o [1]
+  .bss                zero     0x2000773b      0x1  uc1698.o [1]
+  .bss                zero     0x2000773c      0x1  ucos_ii.o [1]
+  .bss                zero     0x2000773d      0x1  ucos_ii.o [1]
+  .bss                zero     0x2000773e      0x1  ucos_ii.o [1]
+  .bss                zero     0x2000773f      0x1  ucos_ii.o [1]
+  .bss                zero     0x20007740      0x1  ucos_ii.o [1]
+  .bss                zero     0x20007741      0x1  ucos_ii.o [1]
+  .bss                zero     0x20007742      0x1  ucos_ii.o [1]
+  .bss                zero     0x20007743      0x1  ucos_ii.o [1]
+  .bss                zero     0x20007744      0x1  ucos_ii.o [1]
+  .bss                zero     0x20007745      0x1  ucos_ii.o [1]
+                             - 0x20007746   0x7332
+
+"P3", part 3 of 3:                          0x3600
+  .noinit             uninit   0x20007748   0x2000  initOSfile.o [1]
+  .noinit             uninit   0x20009748    0x400  initOSfile.o [1]
+  .noinit             uninit   0x20009b48    0x400  initOSfile.o [1]
+  .noinit             uninit   0x20009f48    0x400  initOSfile.o [1]
+  CSTACK                       0x2000a348    0x800  <Block>
+    CSTACK            uninit   0x2000a348    0x800  <Block tail>
+  HEAP                         0x2000ab48    0x200  <Block>
+    HEAP              uninit   0x2000ab48    0x200  <Block tail>
+                             - 0x2000ad48   0x3600
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x7332:
+          0x20000414  0x7332
+
+Copy/lz77 (__iar_lz77_init3)
+    1 source range, total size 0x1e8 (46% of destination):
+          0x0803af48   0x1e8
+    1 destination range, total size 0x412:
+          0x20000000   0x412
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data  ro data
+                                                     (abs)
+    ------               -------  -------  -------  -------
+E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36_010_WIRED_PULT\P24\Debug\Obj: [1]
+    CRC.o                    290      512
+    Calc_New.o                         84
+    DbgTim.o                 206       75      160
+    Font.o                         44 563       24
+    Icon.o                   372    1 568
+    Kbd.o                    776                28
+    LED.o                    204                 4
+    LevelMenu.o            3 788      212
+    MakeOpis.o             1 528               488
+    Manchester.o             166       16
+    Menu.o                35 532    1 417   14 092
+    MessageFlash.o         1 408    2 610    6 560
+    MicroProg.o            3 008    2 016        4
+    Monitor.o              2 360
+    OS_Obj.o                                    40
+    Screen1.o                      32 000
+    SetupMenu.o            8 938       93       74
+    Spi.o                  1 268       20
+    SysTimers.o               48                 2
+    TimeMy.o                  90
+    TskControl.o              22
+    TskDRV.o               2 212               464
+    TskKbd.o                 484                32
+    TskLcd.o                 136       24
+    UART_manchester.o      1 224       20      589
+    VersionPo.o              252       44
+    dma.o                    272                 1
+    filemp.o               2 696        8
+    initOSfile.o             480      148   11 264
+    main.o                   226                         29
+    misc.o                   144
+    modbus.o                 574               256
+    os_cpu_a.o               160
+    os_cpu_c.o               284                 2
+    os_dbg.o                 460      112
+    startup_stm32f2xx.o      764
+    stm32f2xx_dbgmcu.o        68
+    stm32f2xx_dma.o          208
+    stm32f2xx_exti.o         204
+    stm32f2xx_flash.o        568
+    stm32f2xx_gpio.o         268
+    stm32f2xx_it.o            12
+    stm32f2xx_rcc.o          448        8       16
+    stm32f2xx_spi.o          142
+    stm32f2xx_syscfg.o        84
+    stm32f2xx_tim.o          444
+    stm32f2xx_usart.o        432
+    system_stm32f2xx.o       292        2        4
+    uc1698.o                 940             3 202
+    ucos_ii.o              6 516      344    4 226
+    -------------------------------------------------------
+    Total:                80 998   85 896   41 532       29
+
+command line: [2]
+    -------------------------------------------------------
+    Total:
+
+dl7M_tlf.a: [3]
+    abort.o                    6
+    abs.o                      8
+    div.o                     14
+    exit.o                     4
+    localeconv.o             108       63      136
+    low_level_init.o           4
+    setlocale.o               20       55      116
+    sprintf.o                 52
+    strcat.o                  28
+    strstr.o                  44
+    xencoding_sb.o            96
+    xgetmemchunk.o            44                 4
+    xmbcurmax.o               10
+    xmbtowc.o                 32
+    xprintflarge.o         3 822
+    xsprout.o                 10
+    xtls.o                     2
+    xwctomb.o                 26
+    xxmemxfree.o             128
+    xxmemxmalloc.o           176                 8
+    -------------------------------------------------------
+    Total:                 4 634      118      264
+
+m7M_tl.a: [4]
+    DblAdd.o                 212
+    DblCmpLe.o                46
+    DblDiv.o                 582
+    DblMul.o                 418
+    DblSub.o                 384
+    DblToFlt.o               144
+    DblToI32.o                88
+    FltAdd.o                 132
+    FltCmpGe.o                36
+    FltCmpLe.o                36
+    FltDiv.o                 252
+    FltMul.o                 216
+    FltSub.o                 230
+    FltToDbl.o                78
+    FltToS32.o                68
+    FltToU32.o                36
+    I32ToDbl.o                48
+    I32ToFlt.o                50
+    xdnorm.o                  66
+    -------------------------------------------------------
+    Total:                 3 122
+
+rt7M_tl.a: [5]
+    ABImemclr4.o               6
+    ABImemcpy.o              118
+    ABImemset.o              102
+    ABImemset48.o             50
+    I64DivMod.o              238
+    I64DivZer.o                2
+    cexit.o                   10
+    cmain.o                   22
+    cstartup_M.o              12
+    data_init.o               40
+    lz77_init.o              420
+    memchr.o                  88
+    memcmp.o                  98
+    strchr.o                  22
+    strcpy.o                  68
+    strlen.o                  54
+    zero_init3.o              34
+    -------------------------------------------------------
+    Total:                 1 384
+
+shb_l.a: [6]
+    exit.o                    20
+    -------------------------------------------------------
+    Total:                    20
+
+    Linker created                     44    2 560
+-----------------------------------------------------------
+    Grand Total:          90 158   86 058   44 356       29
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x0803a64d          Code  Gb  cmain.o [5]
+ADC_IRQHandler          0x0803ae0d          Code  Wk  startup_stm32f2xx.o [1]
+APBAHBPrescTable        0x200003e0    0x10  Data  Lc  stm32f2xx_rcc.o [1]
+ARSKeyDown              0x20007648     0xc  Data  Gb  TskKbd.o [1]
+ARSKeyUp                0x2000763c     0xc  Data  Gb  TskKbd.o [1]
+AT45Sem                 0x200076a4     0x4  Data  Gb  OS_Obj.o [1]
+AllPrmPnt               0x2000767c     0x4  Data  Gb  MakeOpis.o [1]
+Anime                   0x0801c4cf    0x7c  Code  Gb  LevelMenu.o [1]
+App_TimeTickHook        0x08024f89    0x30  Code  Gb  SysTimers.o [1]
+Arial22                 0x0802d508  0x6978  Data  Gb  Font.o [1]
+BeginMeasEvent          0x08020fb7    0x1c  Code  Gb  DbgTim.o [1]
+BufStartStop            0x20007614    0x10  Data  Gb  TskDRV.o [1]
+BusFault_Handler        0x0803aa67     0x2  Code  Gb  stm32f2xx_it.o [1]
+CAN1_RX0_IRQHandler     0x0803ae15          Code  Wk  startup_stm32f2xx.o [1]
+CAN1_RX1_IRQHandler     0x0803ae19          Code  Wk  startup_stm32f2xx.o [1]
+CAN1_SCE_IRQHandler     0x0803ae1d          Code  Wk  startup_stm32f2xx.o [1]
+CAN1_TX_IRQHandler      0x0803ae11          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_RX0_IRQHandler     0x0803aec5          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_RX1_IRQHandler     0x0803aec9          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_SCE_IRQHandler     0x0803aecd          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_TX_IRQHandler      0x0803aec1          Code  Wk  startup_stm32f2xx.o [1]
+CRYP_IRQHandler         0x0803af01          Code  Wk  startup_stm32f2xx.o [1]
+CSTACK$$Base            0x2000a348           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000ab48           --   Gb  - Linker created -
+CalcPosCharF            0x08016cf1    0x2a  Code  Gb  Menu.o [1]
+CalcPosCharInt          0x08017191    0x32  Code  Gb  Menu.o [1]
+CallHandleParam         0x08016b89    0xce  Code  Gb  Menu.o [1]
+CallMenuDrive           0x0803aa83     0xa  Code  Gb  Menu.o [1]
+CallMenuPult            0x0803aa79     0xa  Code  Gb  Menu.o [1]
+CallMenuStatusReplace   0x0803aa8d     0xa  Code  Gb  Menu.o [1]
+CanRestore              0x08021a35    0x58  Code  Gb  filemp.o [1]
+CanSave                 0x08021a05    0x30  Code  Gb  filemp.o [1]
+ChangeDescriptorPrm     0x0801da8b    0x52  Code  Gb  SetupMenu.o [1]
+ClearRectangle          0x0801d291   0x13e  Code  Gb  MessageFlash.o [1]
+CntReq                  0x20007710     0x2  Data  Gb  Menu.o [1]
+ControlTaskStack        0x20009f48   0x400  Data  Gb  initOSfile.o [1]
+CrcPice                 0x08019059    0x4e  Code  Gb  CRC.o [1]
+CrcPortion              0x080190a7    0x46  Code  Gb  CRC.o [1]
+CrcTable                0x08038aa0   0x200  Data  Gb  CRC.o [1]
+DBGMCU_APB1PeriphConfig
+                        0x08024b45    0x1e  Code  Gb  stm32f2xx_dbgmcu.o [1]
+DBGMCU_APB2PeriphConfig
+                        0x08024b63    0x1e  Code  Gb  stm32f2xx_dbgmcu.o [1]
+DCMI_IRQHandler         0x0803aefd          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream0_IRQHandler
+                        0x0803adf1          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream1_IRQHandler
+                        0x0803adf5          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream2_IRQHandler
+                        0x0803adf9          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream3_IRQHandler
+                        0x08023545    0x40  Code  Gb  dma.o [1]
+DMA1_Stream4_IRQHandler
+                        0x0803ae01          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream5_IRQHandler
+                        0x0803ae05          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream6_IRQHandler
+                        0x0803ae09          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream7_IRQHandler
+                        0x0803ae81          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream0_IRQHandler
+                        0x0803aea5          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream1_IRQHandler
+                        0x0803aea9          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream2_IRQHandler
+                        0x0803aead          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream3_IRQHandler
+                        0x0803aeb1          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream4_IRQHandler
+                        0x0803aeb5          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream5_IRQHandler
+                        0x0803aed5          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream6_IRQHandler
+                        0x0803aed9          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream7_IRQHandler
+                        0x0803aedd          Code  Wk  startup_stm32f2xx.o [1]
+DMAInitForSpi           0x08023585    0xb0  Code  Gb  dma.o [1]
+DMA_ClearFlag           0x0802502b    0x24  Code  Gb  stm32f2xx_dma.o [1]
+DMA_ClearITPendingBit   0x0802504f    0x24  Code  Gb  stm32f2xx_dma.o [1]
+DMA_Cmd                 0x08025011    0x1a  Code  Gb  stm32f2xx_dma.o [1]
+DMA_Configuration       0x08023195    0xcc  Code  Lc  UART_manchester.o [1]
+DMA_Init                0x08024fb9    0x58  Code  Gb  stm32f2xx_dma.o [1]
+DMDrive                 0x200040f4   0x7d0  Data  Gb  Menu.o [1]
+DMDriveOld              0x200027f4   0xc80  Data  Gb  Menu.o [1]
+DMGlobal                0x200064fc   0x190  Data  Gb  Menu.o [1]
+DMGlobalOld             0x2000681c   0x190  Data  Gb  Menu.o [1]
+DMNumGlobalHOF          0x20006f2c    0xc8  Data  Gb  Menu.o [1]
+DPGlobal                0x2000668c   0x190  Data  Gb  Menu.o [1]
+DPGlobalOld             0x200069ac   0x190  Data  Gb  Menu.o [1]
+DRVStack                0x20009b48   0x400  Data  Gb  initOSfile.o [1]
+DataBuf                 0x20006c3c   0x100  Data  Gb  modbus.o [1]
+DataRotate              0x08021101    0x2c  Code  Gb  filemp.o [1]
+DayInMonth              0x0803a31c    0x1c  Data  Gb  Menu.o [1]
+DayMonToStr             0x080185cf    0x68  Code  Gb  Menu.o [1]
+DayMonthToFormat        0x08017e19    0x40  Code  Gb  Menu.o [1]
+DeInitAllDP             0x08012d21    0x10  Code  Gb  Menu.o [1]
+DebugMon_Handler        0x0803aa6b     0x2  Code  Gb  stm32f2xx_it.o [1]
+DrawIcon16x16           0x08020df5    0x92  Code  Gb  Icon.o [1]
+DrawIcon32x16           0x08020e87    0xde  Code  Gb  Icon.o [1]
+DrawLine                0x080200e3   0x258  Code  Gb  Monitor.o [1]
+DrawRectangle           0x08020415    0x8c  Code  Gb  Monitor.o [1]
+DummyFunc               0x08010025    0x28  Code  Gb  main.o [1]
+ETH_IRQHandler          0x0803aeb9          Code  Wk  startup_stm32f2xx.o [1]
+ETH_WKUP_IRQHandler     0x0803aebd          Code  Wk  startup_stm32f2xx.o [1]
+EXTI0_IRQHandler        0x0803addd          Code  Wk  startup_stm32f2xx.o [1]
+EXTI15_10_IRQHandler    0x0803ae65          Code  Wk  startup_stm32f2xx.o [1]
+EXTI1_IRQHandler        0x0803ade1          Code  Wk  startup_stm32f2xx.o [1]
+EXTI2_IRQHandler        0x0803ade5          Code  Wk  startup_stm32f2xx.o [1]
+EXTI3_IRQHandler        0x0803ade9          Code  Wk  startup_stm32f2xx.o [1]
+EXTI4_IRQHandler        0x0803aded          Code  Wk  startup_stm32f2xx.o [1]
+EXTI9_5_IRQHandler      0x080192a5    0x2a  Code  Gb  Spi.o [1]
+EXTI_ClearITPendingBit  0x08022a15     0x6  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_GetITStatus        0x080229ed    0x28  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_Init               0x08022965    0x88  Code  Gb  stm32f2xx_exti.o [1]
+EditPrm                 0x0803a0e8    0x20  Data  Gb  Icon.o [1]
+EditStopPrm             0x0803a0c8    0x20  Data  Gb  Icon.o [1]
+EndMeasEvent            0x08020fd3    0x5a  Code  Gb  DbgTim.o [1]
+EraseMCUFlash           0x0801b997    0x4c  Code  Gb  MicroProg.o [1]
+FLASH_ClearFlag         0x0802307b     0x6  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_EraseSector       0x08022f0b    0xc0  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_GetStatus         0x08023081    0x44  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_IRQHandler        0x0803add5          Code  Wk  startup_stm32f2xx.o [1]
+FLASH_Lock              0x08022ef9    0x12  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_OB_BORConfig      0x0802303d    0x18  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_OB_GetBOR         0x08023071     0xa  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_OB_Launch         0x08023055    0x1c  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_OB_Lock           0x0802302f     0xe  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_OB_Unlock         0x08023019    0x16  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_ProgramByte       0x08022fcb    0x4e  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_Unlock            0x08022ed9    0x20  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_WaitForLastOperation
+                        0x080230e9    0x28  Code  Gb  stm32f2xx_flash.o [1]
+FM25Fill                0x08019491    0xfe  Code  Gb  Spi.o [1]
+FM25Read                0x080192cf    0xba  Code  Gb  Spi.o [1]
+FM25Write               0x08019389   0x108  Code  Gb  Spi.o [1]
+FSMC_IRQHandler         0x0803ae85          Code  Wk  startup_stm32f2xx.o [1]
+FillInCrcs              0x0802119d   0x130  Code  Gb  filemp.o [1]
+FillingStatusMDP        0x08020955   0x458  Code  Gb  Menu.o [1]
+FindDescriptor          0x08023835   0x104  Code  Gb  SetupMenu.o [1]
+FindDescriptorWhithCheck
+                        0x0801e535   0x28e  Code  Gb  SetupMenu.o [1]
+FindEndSym              0x08012691    0x36  Code  Gb  Menu.o [1]
+FindFreeFileDescr       0x0801b0db    0x5e  Code  Gb  MicroProg.o [1]
+FindFreeLnk             0x0801b09d    0x3e  Code  Gb  MicroProg.o [1]
+FindGroup               0x08012df9    0xa8  Code  Gb  Menu.o [1]
+FindHyphen              0x08012753    0x68  Code  Gb  Menu.o [1]
+FindMenuWhithPrm        0x0801e83d   0xad6  Code  Gb  SetupMenu.o [1]
+FindParam               0x08012ea1    0xae  Code  Gb  Menu.o [1]
+FindSpace               0x080126c7    0x8c  Code  Gb  Menu.o [1]
+FindVisibleMenu         0x08015631   0x386  Code  Gb  Menu.o [1]
+FindVisibleMenu_Direct  0x0801bf91   0x250  Code  Gb  LevelMenu.o [1]
+FindVisibleParam        0x08015c6d   0x21c  Code  Gb  Menu.o [1]
+FindVisibleParamWhithPrm
+                        0x0801f319   0x23e  Code  Gb  SetupMenu.o [1]
+FindVisibleTekParam     0x080159d9   0x27e  Code  Gb  Menu.o [1]
+FloatToStr              0x0801840f    0x40  Code  Gb  Menu.o [1]
+FloatToStrEdit          0x08016d1b   0x42a  Code  Gb  Menu.o [1]
+FloatViewEdit           0x08018389     0x2  Code  Gb  Menu.o [1]
+FormatToDayMonth        0x08017e59    0x68  Code  Gb  Menu.o [1]
+FormatToHourMin         0x08017ef5    0x86  Code  Gb  Menu.o [1]
+FormatToMinSec          0x08017fa7    0x54  Code  Gb  Menu.o [1]
+FormatToRef             0x08017fff    0x54  Code  Gb  Menu.o [1]
+Format_Message          0x080127e1   0x218  Code  Gb  Menu.o [1]
+Format_MessageFlash     0x0801cfc5   0x2cc  Code  Gb  MessageFlash.o [1]
+FuncEditParam           0x08039b30    0x38  Data  Gb  Menu.o [1]
+FuncViewEditParam       0x08039af8    0x38  Data  Gb  Menu.o [1]
+FuncViewParam           0x08039ac0    0x38  Data  Gb  Menu.o [1]
+GPIO_Configuration      0x0802312f    0x44  Code  Lc  UART_manchester.o [1]
+GPIO_Init               0x08022805    0xaa  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_PinAFConfig        0x080228b7    0x5a  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_ResetBits          0x080228b3     0x4  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_SetBits            0x080228af     0x4  Code  Gb  stm32f2xx_gpio.o [1]
+GetAdrJrnInFile         0x0802059f     0x8  Code  Gb  Menu.o [1]
+GetCrc                  0x08019029    0x30  Code  Gb  CRC.o [1]
+GetFlagsPrm             0x0801f611   0x104  Code  Gb  MakeOpis.o [1]
+GetModeMenu             0x0801bf85     0xc  Code  Gb  Menu.o [1]
+GetOpisMenu             0x080168c9    0x64  Code  Gb  Menu.o [1]
+GetOpisMenuGrp          0x0801c1e1    0xb4  Code  Gb  LevelMenu.o [1]
+GetOpisParam            0x08016931    0xe4  Code  Gb  Menu.o [1]
+GetPosPrev              0x0801c2ed   0x1e2  Code  Gb  LevelMenu.o [1]
+GetSecLeft              0x0801f5c3    0x26  Code  Gb  TimeMy.o [1]
+GetSector               0x0801ba41    0xd0  Code  Gb  MicroProg.o [1]
+GetString               0x0801ce71    0x16  Code  Gb  MessageFlash.o [1]
+GetStringAlarm          0x0801ce87    0x18  Code  Gb  MessageFlash.o [1]
+GetStringMess           0x0801ceb5    0x18  Code  Gb  MessageFlash.o [1]
+GetStringTitle          0x0801ce9f    0x16  Code  Gb  MessageFlash.o [1]
+GetTickLeft             0x0801f5ad    0x16  Code  Gb  TimeMy.o [1]
+GetTickLeftU16          0x0801f5e9    0x1e  Code  Gb  TimeMy.o [1]
+GeteHigh                0x08022075     0xc  Code  Gb  Menu.o [1]
+GeteLow                 0x08022081    0x16  Code  Gb  Menu.o [1]
+GrafBffClear            0x080183e5    0x12  Code  Gb  Menu.o [1]
+HASH_RNG_IRQHandler     0x0803af05          Code  Wk  startup_stm32f2xx.o [1]
+HEAP$$Base              0x2000ab48           --   Gb  - Linker created -
+HEAP$$Limit             0x2000ad48           --   Gb  - Linker created -
+HMorMSorMDToStrEdit     0x08018053   0x336  Code  Gb  Menu.o [1]
+HandlerMainMenuPult     0x08012bbd    0x92  Code  Gb  Menu.o [1]
+HandlerMainMenuPult_struct
+                        0x20007684     0x4  Data  Gb  Menu.o [1]
+HandlerMenuChangeDrive  0x08015449   0x1bc  Code  Gb  Menu.o [1]
+HandlerMenuChangeDrive_struct
+                        0x20007374    0x5c  Data  Gb  Menu.o [1]
+HandlerMenuJrn          0x08010a3d   0x4f0  Code  Gb  Menu.o [1]
+HandlerMenuJrn_struct   0x200074f0    0x34  Data  Gb  Menu.o [1]
+HandlerMenuMasterSet    0x0801d3f1   0x69a  Code  Gb  SetupMenu.o [1]
+HandlerMenuPult         0x0801043f   0x288  Code  Gb  Menu.o [1]
+HandlerMenuPultAndDrive
+                        0x0801300d  0x1e28  Code  Gb  Menu.o [1]
+HandlerMenuPultNew_struct
+                        0x200056fc   0x248  Data  Gb  Menu.o [1]
+HandlerMenuPult_struct  0x20007680     0x4  Data  Gb  Menu.o [1]
+HandlerMenuSetup        0x200074b8    0x38  Data  Gb  SetupMenu.o [1]
+HandlerMenuStatus       0x080113fd   0x93c  Code  Gb  Menu.o [1]
+HandlerMenuStatusReplace
+                        0x08010f4d   0x27e  Code  Gb  Menu.o [1]
+HandlerMenuStatusReplace_struct
+                        0x20007690     0x4  Data  Gb  Menu.o [1]
+HandlerMenuStatus_struct
+                        0x20007424    0x54  Data  Gb  Menu.o [1]
+HandlerMessage          0x08012a11   0x15e  Code  Gb  Menu.o [1]
+HardFault_Handler       0x0803aa63     0x2  Code  Gb  stm32f2xx_it.o [1]
+HexToStr                0x080185ad    0x22  Code  Gb  Menu.o [1]
+HexToStrEdit            0x080177dd   0x230  Code  Gb  Menu.o [1]
+HourMinToFormat         0x08017ec9    0x2c  Code  Gb  Menu.o [1]
+HourMinToStr            0x08018637    0x44  Code  Gb  Menu.o [1]
+I2C1_ER_IRQHandler      0x0803ae45          Code  Wk  startup_stm32f2xx.o [1]
+I2C1_EV_IRQHandler      0x0803ae41          Code  Wk  startup_stm32f2xx.o [1]
+I2C2_ER_IRQHandler      0x0803ae4d          Code  Wk  startup_stm32f2xx.o [1]
+I2C2_EV_IRQHandler      0x0803ae49          Code  Wk  startup_stm32f2xx.o [1]
+I2C3_ER_IRQHandler      0x0803aee9          Code  Wk  startup_stm32f2xx.o [1]
+I2C3_EV_IRQHandler      0x0803aee5          Code  Wk  startup_stm32f2xx.o [1]
+IconStatus_struct       0x20007694     0x4  Data  Gb  Menu.o [1]
+InStream_Read           0x08038e85    0x22  Code  Lc  lz77_init.o [5]
+InfoPrm                 0x0803a108    0x20  Data  Gb  Icon.o [1]
+InitAllDM               0x08012d39    0x70  Code  Gb  Menu.o [1]
+InitDM                  0x08012dad    0x3e  Code  Gb  Menu.o [1]
+InitDP                  0x08012c5d    0xb0  Code  Gb  Menu.o [1]
+InitWD                  0x0801bc0f    0x28  Code  Gb  main.o [1]
+InstallDrv              0x0801b139   0x688  Code  Gb  MicroProg.o [1]
+InstallDrvProgress      0x0801b039    0x64  Code  Gb  MicroProg.o [1]
+IsNvsaOld               0x0801028d    0x98  Code  Gb  Menu.o [1]
+IsTekHOFLeng            0x08010325    0xa6  Code  Gb  Menu.o [1]
+KBDStack                0x20009748   0x400  Data  Gb  initOSfile.o [1]
+LCDStack                0x20007748  0x2000  Data  Gb  initOSfile.o [1]
+LCD_init                0x08020797    0x64  Code  Gb  uc1698.o [1]
+LCD_init_hw             0x080205a9   0x122  Code  Gb  uc1698.o [1]
+LCD_write_command       0x080206cb    0x44  Code  Gb  uc1698.o [1]
+LCD_write_data          0x0802070f    0x44  Code  Gb  uc1698.o [1]
+LEDState                0x20007678     0x4  Data  Gb  LED.o [1]
+Lcd_driver_init         0x2000773a     0x1  Data  Gb  uc1698.o [1]
+LevelAccess             0x2000769c     0x4  Data  Gb  MicroProg.o [1]
+MBoxKbdReq              0x200076ac     0x4  Data  Gb  OS_Obj.o [1]
+MBoxKbdResp             0x200076b0     0x4  Data  Gb  OS_Obj.o [1]
+MDPDrive                0x20000414  0x1260  Data  Gb  Menu.o [1]
+MPOpis                  0x200073d0    0x54  Data  Gb  MakeOpis.o [1]
+MainMenu                0x200003a0    0x20  Data  Gb  Menu.o [1]
+MainStackPointer        0x08010000     0x4  Data  Lc  main.o [1]
+ManchesterBitCode       0x0803a7a8    0x10  Data  Gb  Manchester.o [1]
+ManchesterDecode        0x080223bd    0x2c  Code  Gb  Manchester.o [1]
+ManchesterEncode        0x080223e9    0x2c  Code  Gb  Manchester.o [1]
+Manchester_Decode       0x08024f05    0x2e  Code  Gb  Manchester.o [1]
+Manchester_Encode       0x08024f35    0x20  Code  Gb  Manchester.o [1]
+MasEdIzmTek             0x20005944   0x228  Data  Gb  Menu.o [1]
+MasFlash                0x20001674  0x1180  Data  Gb  MessageFlash.o [1]
+MasMess                 0x200048c4   0x5c0  Data  Gb  MessageFlash.o [1]
+MasTitle                0x200070b4    0xb0  Data  Gb  MessageFlash.o [1]
+MaxDigFloat             0x08016c95    0x26  Code  Gb  Menu.o [1]
+MaxDigHex               0x08016cdd    0x14  Code  Gb  Menu.o [1]
+MaxDigInt               0x08016cbb    0x22  Code  Gb  Menu.o [1]
+MeasTimeDbg             0x20000118    0xa0  Data  Gb  DbgTim.o [1]
+MemManage_Handler       0x0803aa65     0x2  Code  Gb  stm32f2xx_it.o [1]
+MenuStartOneShotReadAT45
+                        0x08015e91   0x106  Code  Gb  Menu.o [1]
+MenuToGraf              0x08016a15    0x64  Code  Gb  Menu.o [1]
+MessageActiv            0x0801cf93    0x32  Code  Gb  MessageFlash.o [1]
+MessageCancel           0x08012b95    0x14  Code  Gb  Menu.o [1]
+MessageClear            0x0801cf61    0x32  Code  Gb  MessageFlash.o [1]
+MessageGlobal           0x20007630     0xc  Data  Gb  MessageFlash.o [1]
+MessagePopUp            0x08012b81    0x14  Code  Gb  Menu.o [1]
+MessageSetAlarm         0x0801cecd    0x3e  Code  Gb  MessageFlash.o [1]
+MessageShow             0x0801cf0b    0x56  Code  Gb  MessageFlash.o [1]
+MessageYesNo            0x08012ba9    0x14  Code  Gb  Menu.o [1]
+MicroProgTabl           0x08038310   0x790  Data  Gb  MicroProg.o [1]
+MicroProg_Init          0x0801fb01    0xf6  Code  Gb  MakeOpis.o [1]
+MinSecToFormat          0x08017f7b    0x2c  Code  Gb  Menu.o [1]
+ModbusFunc              0x08022415   0x228  Code  Gb  modbus.o [1]
+ModbusMakeOpis          0x0801f715   0x214  Code  Gb  MakeOpis.o [1]
+MsgReqDrvIn             0x20006ff4    0xc0  Data  Gb  TskDRV.o [1]
+NMI_Handler             0x0803aa61     0x2  Code  Gb  stm32f2xx_it.o [1]
+NVIC_Configuration      0x08023173    0x22  Code  Lc  UART_manchester.o [1]
+NVIC_Init               0x08022a31    0x6a  Code  Gb  misc.o [1]
+NVIC_SetVectorTable     0x08022a9b     0xc  Code  Gb  misc.o [1]
+NameMonth               0x20000310    0x38  Data  Gb  Menu.o [1]
+NvStructIntegrityTest   0x080103cb    0x74  Code  Gb  Menu.o [1]
+OSCPUUsage              0x2000773c     0x1  Data  Gb  ucos_ii.o [1]
+OSCtxSw                 0x08022b7b          Code  Gb  os_cpu_a.o [1]
+OSCtxSwCtr              0x200076d0     0x4  Data  Gb  ucos_ii.o [1]
+OSDataSize              0x0803af44     0x2  Data  Gb  os_dbg.o [1]
+OSDebugEn               0x08021f16     0x2  Data  Gb  os_dbg.o [1]
+OSDebugInit             0x08022d0d   0x1cc  Code  Gb  os_dbg.o [1]
+OSEndiannessTest        0x0803ad9c     0x4  Data  Gb  os_dbg.o [1]
+OSEventEn               0x08021f66     0x2  Data  Gb  os_dbg.o [1]
+OSEventFreeList         0x200076d4     0x4  Data  Gb  ucos_ii.o [1]
+OSEventMax              0x08021fde     0x2  Data  Gb  os_dbg.o [1]
+OSEventMultiEn          0x08022b4e     0x2  Data  Gb  os_dbg.o [1]
+OSEventNameEn           0x080220b2     0x2  Data  Gb  os_dbg.o [1]
+OSEventNameSet          0x08019655    0x3c  Code  Gb  ucos_ii.o [1]
+OSEventSize             0x0802232a     0x2  Data  Gb  os_dbg.o [1]
+OSEventTbl              0x20004e84   0x300  Data  Gb  ucos_ii.o [1]
+OSEventTblSize          0x08022642     0x2  Data  Gb  os_dbg.o [1]
+OSFlagEn                0x0802399a     0x2  Data  Gb  os_dbg.o [1]
+OSFlagGrpSize           0x0802488a     0x2  Data  Gb  os_dbg.o [1]
+OSFlagMax               0x08024f32     0x2  Data  Gb  os_dbg.o [1]
+OSFlagNameEn            0x08024f86     0x2  Data  Gb  os_dbg.o [1]
+OSFlagNodeSize          0x0802495a     0x2  Data  Gb  os_dbg.o [1]
+OSFlagWidth             0x08024d2a     0x2  Data  Gb  os_dbg.o [1]
+OSIdleCtr               0x200076e0     0x4  Data  Gb  ucos_ii.o [1]
+OSIdleCtrMax            0x200076d8     0x4  Data  Gb  ucos_ii.o [1]
+OSIdleCtrRun            0x200076dc     0x4  Data  Gb  ucos_ii.o [1]
+OSInit                  0x08019691    0x30  Code  Gb  ucos_ii.o [1]
+OSInitHookBegin         0x08022bf1     0x8  Code  Gb  os_cpu_c.o [1]
+OSInitHookEnd           0x08022bf9     0x2  Code  Gb  os_cpu_c.o [1]
+OSIntCtxSw              0x08022b83          Code  Gb  os_cpu_a.o [1]
+OSIntEnter              0x080196c1    0x24  Code  Gb  ucos_ii.o [1]
+OSIntExit               0x080196e5    0x94  Code  Gb  ucos_ii.o [1]
+OSIntNesting            0x2000773e     0x1  Data  Gb  ucos_ii.o [1]
+OSLockNesting           0x2000773f     0x1  Data  Gb  ucos_ii.o [1]
+OSLowestPrio            0x08025302     0x2  Data  Gb  os_dbg.o [1]
+OSMboxAccept            0x08019fc1    0x28  Code  Gb  ucos_ii.o [1]
+OSMboxCreate            0x08019fe9    0x5a  Code  Gb  ucos_ii.o [1]
+OSMboxEn                0x08025366     0x2  Data  Gb  os_dbg.o [1]
+OSMboxPend              0x0801a043   0x102  Code  Gb  ucos_ii.o [1]
+OSMboxPost              0x0801a161    0x56  Code  Gb  ucos_ii.o [1]
+OSMboxQuery             0x0801a1b7    0x54  Code  Gb  ucos_ii.o [1]
+OSMemEn                 0x08025432     0x2  Data  Gb  os_dbg.o [1]
+OSMemMax                0x08025612     0x2  Data  Gb  os_dbg.o [1]
+OSMemNameEn             0x0802568e     0x2  Data  Gb  os_dbg.o [1]
+OSMemSize               0x0803902e     0x2  Data  Gb  os_dbg.o [1]
+OSMemTblSize            0x0803a64a     0x2  Data  Gb  os_dbg.o [1]
+OSMutexEn               0x0803a66a     0x2  Data  Gb  os_dbg.o [1]
+OSPrioCur               0x20007740     0x1  Data  Gb  ucos_ii.o [1]
+OSPrioHighRdy           0x20007741     0x1  Data  Gb  ucos_ii.o [1]
+OSPtrSize               0x0803a676     0x2  Data  Gb  os_dbg.o [1]
+OSQAccept               0x0801a20b    0x60  Code  Gb  ucos_ii.o [1]
+OSQCreate               0x0801a26b    0xac  Code  Gb  ucos_ii.o [1]
+OSQEn                   0x0803aa96     0x2  Data  Gb  os_dbg.o [1]
+OSQFlush                0x0801a339    0x26  Code  Gb  ucos_ii.o [1]
+OSQFreeList             0x200076f4     0x4  Data  Gb  ucos_ii.o [1]
+OSQMax                  0x0803af08     0x2  Data  Gb  os_dbg.o [1]
+OSQPend                 0x0801a35f   0x148  Code  Gb  ucos_ii.o [1]
+OSQPost                 0x0801a4c5    0x78  Code  Gb  ucos_ii.o [1]
+OSQPostFront            0x0801a53d    0x7a  Code  Gb  ucos_ii.o [1]
+OSQQuery                0x0801a5b7    0x74  Code  Gb  ucos_ii.o [1]
+OSQSize                 0x0803af0a     0x2  Data  Gb  os_dbg.o [1]
+OSQTbl                  0x200072fc    0x78  Data  Gb  ucos_ii.o [1]
+OSRdyGrp                0x20007742     0x1  Data  Gb  ucos_ii.o [1]
+OSRdyTbl                0x20007664     0x8  Data  Gb  ucos_ii.o [1]
+OSRdyTblSize            0x0803af0c     0x2  Data  Gb  os_dbg.o [1]
+OSRunning               0x20007743     0x1  Data  Gb  ucos_ii.o [1]
+OSSchedLock             0x08019779    0x3e  Code  Gb  ucos_ii.o [1]
+OSSchedUnlock           0x080197b7    0x64  Code  Gb  ucos_ii.o [1]
+OSSemCreate             0x0801a66d    0x5c  Code  Gb  ucos_ii.o [1]
+OSSemEn                 0x0803af0e     0x2  Data  Gb  os_dbg.o [1]
+OSSemPend               0x0801a6e9    0xf0  Code  Gb  ucos_ii.o [1]
+OSSemPost               0x0801a7f1    0x5c  Code  Gb  ucos_ii.o [1]
+OSStart                 0x0801981b    0x42  Code  Gb  ucos_ii.o [1]
+OSStartHighRdy          0x08022b5f          Code  Gb  os_cpu_a.o [1]
+OSStatRdy               0x2000773d     0x1  Data  Gb  ucos_ii.o [1]
+OSStkWidth              0x0803af10     0x2  Data  Gb  os_dbg.o [1]
+OSTCBCur                0x200076e4     0x4  Data  Gb  ucos_ii.o [1]
+OSTCBFreeList           0x200076e8     0x4  Data  Gb  ucos_ii.o [1]
+OSTCBHighRdy            0x200076ec     0x4  Data  Gb  ucos_ii.o [1]
+OSTCBInitHook           0x08022c85     0x2  Code  Gb  os_cpu_c.o [1]
+OSTCBList               0x200076f0     0x4  Data  Gb  ucos_ii.o [1]
+OSTCBPrioTbl            0x20006d3c   0x100  Data  Gb  ucos_ii.o [1]
+OSTCBPrioTblMax         0x0803af28     0x2  Data  Gb  os_dbg.o [1]
+OSTCBSize               0x0803af2a     0x2  Data  Gb  os_dbg.o [1]
+OSTCBTbl                0x20005184   0x2f8  Data  Gb  ucos_ii.o [1]
+OSTaskCreate            0x0801a84d    0xbc  Code  Gb  ucos_ii.o [1]
+OSTaskCreateEn          0x0803af12     0x2  Data  Gb  os_dbg.o [1]
+OSTaskCreateExt         0x0801a909    0xd2  Code  Gb  ucos_ii.o [1]
+OSTaskCreateExtEn       0x0803af14     0x2  Data  Gb  os_dbg.o [1]
+OSTaskCreateHook        0x08022bfb     0x2  Code  Gb  os_cpu_c.o [1]
+OSTaskCtr               0x20007744     0x1  Data  Gb  ucos_ii.o [1]
+OSTaskDel               0x0801a9db   0x154  Code  Gb  ucos_ii.o [1]
+OSTaskDelEn             0x0803af16     0x2  Data  Gb  os_dbg.o [1]
+OSTaskDelHook           0x08022bfd     0x2  Code  Gb  os_cpu_c.o [1]
+OSTaskIdleHook          0x08022bff     0x2  Code  Gb  os_cpu_c.o [1]
+OSTaskIdleStk           0x20005f6c   0x200  Data  Gb  ucos_ii.o [1]
+OSTaskIdleStkSize       0x0803af18     0x2  Data  Gb  os_dbg.o [1]
+OSTaskMax               0x0803af1c     0x2  Data  Gb  os_dbg.o [1]
+OSTaskNameEn            0x0803af1e     0x2  Data  Gb  os_dbg.o [1]
+OSTaskNameSet           0x0801ab35    0x70  Code  Gb  ucos_ii.o [1]
+OSTaskProfileEn         0x0803af1a     0x2  Data  Gb  os_dbg.o [1]
+OSTaskReturnHook        0x08022c01     0x2  Code  Gb  os_cpu_c.o [1]
+OSTaskStatEn            0x0803af20     0x2  Data  Gb  os_dbg.o [1]
+OSTaskStatHook          0x08022c03     0x2  Code  Gb  os_cpu_c.o [1]
+OSTaskStatStk           0x20005d6c   0x200  Data  Gb  ucos_ii.o [1]
+OSTaskStatStkChkEn      0x0803af24     0x2  Data  Gb  os_dbg.o [1]
+OSTaskStatStkSize       0x0803af22     0x2  Data  Gb  os_dbg.o [1]
+OSTaskStkChk            0x0801aba9    0x98  Code  Gb  ucos_ii.o [1]
+OSTaskStkInit           0x08022c05    0x7e  Code  Gb  os_cpu_c.o [1]
+OSTaskSwHook            0x08022c83     0x2  Code  Gb  os_cpu_c.o [1]
+OSTaskSwHookEn          0x0803af26     0x2  Data  Gb  os_dbg.o [1]
+OSTickStepState         0x20007745     0x1  Data  Gb  ucos_ii.o [1]
+OSTicksPerSec           0x0803af2c     0x2  Data  Gb  os_dbg.o [1]
+OSTime                  0x200076f8     0x4  Data  Gb  ucos_ii.o [1]
+OSTimeDly               0x0801ac79    0x7a  Code  Gb  ucos_ii.o [1]
+OSTimeGet               0x0801acf9    0x1c  Code  Gb  ucos_ii.o [1]
+OSTimeTick              0x0801985d    0xf6  Code  Gb  ucos_ii.o [1]
+OSTimeTickHook          0x08022c87    0x24  Code  Gb  os_cpu_c.o [1]
+OSTimeTickHookEn        0x0803af2e     0x2  Data  Gb  os_dbg.o [1]
+OSTmrCfgMax             0x0803af34     0x2  Data  Gb  os_dbg.o [1]
+OSTmrCfgNameEn          0x0803af36     0x2  Data  Gb  os_dbg.o [1]
+OSTmrCfgTicksPerSec     0x0803af3a     0x2  Data  Gb  os_dbg.o [1]
+OSTmrCfgWheelSize       0x0803af38     0x2  Data  Gb  os_dbg.o [1]
+OSTmrCtr                0x2000772a     0x2  Data  Lc  os_cpu_c.o [1]
+OSTmrEn                 0x0803af32     0x2  Data  Gb  os_dbg.o [1]
+OSTmrFree               0x2000772c     0x2  Data  Gb  ucos_ii.o [1]
+OSTmrFreeList           0x20007708     0x4  Data  Gb  ucos_ii.o [1]
+OSTmrSem                0x20007700     0x4  Data  Gb  ucos_ii.o [1]
+OSTmrSemSignal          0x20007704     0x4  Data  Gb  ucos_ii.o [1]
+OSTmrSignal             0x0801ad25    0x12  Code  Gb  ucos_ii.o [1]
+OSTmrSize               0x0803af3c     0x2  Data  Gb  os_dbg.o [1]
+OSTmrTaskStk            0x2000616c   0x200  Data  Gb  ucos_ii.o [1]
+OSTmrTbl                0x2000547c   0x280  Data  Gb  ucos_ii.o [1]
+OSTmrTblSize            0x0803af3e     0x2  Data  Gb  os_dbg.o [1]
+OSTmrTime               0x200076fc     0x4  Data  Gb  ucos_ii.o [1]
+OSTmrUsed               0x2000772e     0x2  Data  Gb  ucos_ii.o [1]
+OSTmrWheelSize          0x0803af40     0x2  Data  Gb  os_dbg.o [1]
+OSTmrWheelTbl           0x20007478    0x40  Data  Gb  ucos_ii.o [1]
+OSTmrWheelTblSize       0x0803af42     0x2  Data  Gb  os_dbg.o [1]
+OSTmr_Init              0x0801ad45    0x9c  Code  Gb  ucos_ii.o [1]
+OSTmr_InitTask          0x0801ade5    0x38  Code  Lc  ucos_ii.o [1]
+OSTmr_Link              0x0801ae1d    0x78  Code  Lc  ucos_ii.o [1]
+OSTmr_Task              0x0801aeed    0x8c  Code  Lc  ucos_ii.o [1]
+OSTmr_Unlink            0x0801ae95    0x58  Code  Lc  ucos_ii.o [1]
+OSUnMapTbl              0x080393bc   0x100  Data  Gb  ucos_ii.o [1]
+OSVersionNbr            0x0803af30     0x2  Data  Gb  os_dbg.o [1]
+OS_CPU_PendSVHandler    0x08022b8b          Code  Gb  os_cpu_a.o [1]
+OS_CPU_SR_Restore       0x08022b59          Code  Gb  os_cpu_a.o [1]
+OS_CPU_SR_Save          0x08022b51          Code  Gb  os_cpu_a.o [1]
+OS_CPU_SysTickHandler   0x08022cab    0x22  Code  Gb  os_cpu_c.o [1]
+OS_CPU_SysTickInit      0x08022ccd    0x26  Code  Gb  os_cpu_c.o [1]
+OS_Dummy                0x08019953     0x2  Code  Gb  ucos_ii.o [1]
+OS_EventTaskRdy         0x08019955    0xa4  Code  Gb  ucos_ii.o [1]
+OS_EventTaskRemove      0x08019a87    0x32  Code  Gb  ucos_ii.o [1]
+OS_EventTaskWait        0x080199f9    0x8e  Code  Gb  ucos_ii.o [1]
+OS_EventWaitListInit    0x08019ab9    0x20  Code  Gb  ucos_ii.o [1]
+OS_InitEventList        0x08019ad9    0x4e  Code  Lc  ucos_ii.o [1]
+OS_InitMisc             0x08019b27    0x52  Code  Lc  ucos_ii.o [1]
+OS_InitRdyList          0x08019b79    0x44  Code  Lc  ucos_ii.o [1]
+OS_InitTCBList          0x08019c39    0x5a  Code  Lc  ucos_ii.o [1]
+OS_InitTaskIdle         0x08019bbd    0x3e  Code  Lc  ucos_ii.o [1]
+OS_InitTaskStat         0x08019bfb    0x3e  Code  Lc  ucos_ii.o [1]
+OS_MemClr               0x08019c93    0x12  Code  Gb  ucos_ii.o [1]
+OS_QInit                0x0801a62b    0x3c  Code  Gb  ucos_ii.o [1]
+OS_Sched                0x08019ca5    0x72  Code  Gb  ucos_ii.o [1]
+OS_SchedNew             0x08019d17    0x2a  Code  Lc  ucos_ii.o [1]
+OS_TCBInit              0x08019e41   0x180  Code  Gb  ucos_ii.o [1]
+OS_TaskIdle             0x08019d41    0x26  Code  Gb  ucos_ii.o [1]
+OS_TaskReturn           0x0801ac45    0x14  Code  Gb  ucos_ii.o [1]
+OS_TaskStat             0x08019d6d    0x90  Code  Gb  ucos_ii.o [1]
+OS_TaskStatStkChk       0x08019dfd    0x44  Code  Gb  ucos_ii.o [1]
+OS_TaskStkClr           0x0801ac61    0x18  Code  Gb  ucos_ii.o [1]
+OTG_FS_IRQHandler       0x0803aed1          Code  Wk  startup_stm32f2xx.o [1]
+OTG_FS_WKUP_IRQHandler  0x0803ae6d          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_EP1_IN_IRQHandler
+                        0x0803aef1          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_EP1_OUT_IRQHandler
+                        0x0803aeed          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_IRQHandler       0x0803aef9          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_WKUP_IRQHandler  0x0803aef5          Code  Wk  startup_stm32f2xx.o [1]
+OutIdJrn                0x08010871   0x1c8  Code  Gb  Menu.o [1]
+OutPrmJrn               0x080106c7   0x1aa  Code  Gb  Menu.o [1]
+OutStream_Write         0x08038ea7    0x40  Code  Lc  lz77_init.o [5]
+PVD_IRQHandler          0x0803adc9          Code  Wk  startup_stm32f2xx.o [1]
+ParamEdit               0x08016819    0xb0  Code  Gb  Menu.o [1]
+ParamStartOneShotReadAT45
+                        0x08015fc9   0x850  Code  Gb  Menu.o [1]
+ParamStartOneShotReadAT45_ForSetup
+                        0x0801db11   0x72e  Code  Gb  SetupMenu.o [1]
+ParamToStr              0x080183f7    0x18  Code  Gb  Menu.o [1]
+Password                0x0801b7c1    0x70  Code  Gb  MicroProg.o [1]
+PendSV_Handler          0x0803adbd          Code  Wk  startup_stm32f2xx.o [1]
+PickUpIcon1             0x08039044   0x140  Data  Gb  Icon.o [1]
+PrgVersion              0x08010008     0x4  Data  Lc  main.o [1]
+ProgressBar             0x080204a1    0xbc  Code  Gb  Monitor.o [1]
+QueueDrvIn              0x200076b4     0x4  Data  Gb  OS_Obj.o [1]
+QueueDrvInStartStop     0x200076bc     0x4  Data  Gb  OS_Obj.o [1]
+QueueDrvOut             0x200076b8     0x4  Data  Gb  OS_Obj.o [1]
+QueueDrvOutStartStop    0x200076c0     0x4  Data  Gb  OS_Obj.o [1]
+RCC_AHB1PeriphClockCmd  0x08022745    0x1e  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x08022763    0x1e  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB1PeriphResetCmd  0x0802279f    0x1e  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x08022781    0x1e  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB2PeriphResetCmd  0x080227bd    0x1e  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_Configuration       0x08023111    0x1e  Code  Lc  UART_manchester.o [1]
+RCC_GetClocksFreq       0x08022645   0x100  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_IRQHandler          0x0803add9          Code  Wk  startup_stm32f2xx.o [1]
+RCC_Init                0x0801bc03     0xc  Code  Gb  main.o [1]
+RTC_Alarm_IRQHandler    0x0803ae69          Code  Wk  startup_stm32f2xx.o [1]
+RTC_WKUP_IRQHandler     0x0803add1          Code  Wk  startup_stm32f2xx.o [1]
+RamArea                 0x2000636c   0x190  Data  Gb  MakeOpis.o [1]
+RazborRx_mk             0x0801235d   0x320  Code  Gb  Menu.o [1]
+RazgonIcon              0x0803982c    0x80  Data  Gb  Icon.o [1]
+RazgonReverseIcon       0x080398ac    0x80  Data  Gb  Icon.o [1]
+ReQuestDrv              0x08018aa1    0x50  Code  Gb  TskDRV.o [1]
+ReQuestDrvWoPend        0x08018af1    0x22  Code  Gb  TskDRV.o [1]
+ReadFileFromDrv         0x080189d1    0x68  Code  Gb  TskDRV.o [1]
+ReadFileMPLink          0x0802132f    0x46  Code  Gb  filemp.o [1]
+ReadJrnIndex            0x080189ad    0x24  Code  Gb  TskDRV.o [1]
+ReadLnk                 0x0801afc9    0x40  Code  Gb  MicroProg.o [1]
+ReadValueTextPrm        0x08021fe1    0x94  Code  Gb  Menu.o [1]
+ReadVerFunct            0x08018989    0x24  Code  Gb  TskDRV.o [1]
+RefToFormat             0x08017ffb     0x4  Code  Gb  Menu.o [1]
+RefToStr                0x0801867b    0x40  Code  Gb  Menu.o [1]
+RefToStrEdit            0x0801e251   0x2e0  Code  Gb  SetupMenu.o [1]
+Region$$Table$$Base     0x08039fbc           --   Gb  - Linker created -
+Region$$Table$$Limit    0x08039fe8           --   Gb  - Linker created -
+ReqEtalonPassword       0x08018e23   0x178  Code  Gb  TskDRV.o [1]
+ReqLanguage             0x08018d8f    0x94  Code  Gb  TskDRV.o [1]
+ReqS16Prm               0x08018cd5    0x60  Code  Gb  TskDRV.o [1]
+RequestModbusOpisPrm    0x08018b7d    0x6c  Code  Gb  TskDRV.o [1]
+RequestModbusOpisPrmExt
+                        0x08018b13    0x6a  Code  Gb  TskDRV.o [1]
+ResetHandlerAddr        0x08010004     0x4  Data  Lc  main.o [1]
+ResetPassword           0x0801b831   0x166  Code  Gb  MicroProg.o [1]
+ResetWD                 0x0801bc51     0xa  Code  Gb  main.o [1]
+Reset_Handler           0x0803a919          Code  Wk  startup_stm32f2xx.o [1]
+SDIO_IRQHandler         0x0803ae89          Code  Wk  startup_stm32f2xx.o [1]
+SPI1_IRQHandler         0x0803ae51          Code  Wk  startup_stm32f2xx.o [1]
+SPI2_IRQHandler         0x0803ae55          Code  Wk  startup_stm32f2xx.o [1]
+SPI3_IRQHandler         0x0803ae91          Code  Wk  startup_stm32f2xx.o [1]
+SPISem                  0x200076a8     0x4  Data  Gb  OS_Obj.o [1]
+SPI_CalculateCRC        0x08022b1d    0x1c  Code  Gb  stm32f2xx_spi.o [1]
+SPI_Cmd                 0x08022b01    0x1c  Code  Gb  stm32f2xx_spi.o [1]
+SPI_I2S_DMACmd          0x08022b39    0x16  Code  Gb  stm32f2xx_spi.o [1]
+SPI_Init                0x08022ac1    0x40  Code  Gb  stm32f2xx_spi.o [1]
+SVC_Handler             0x0803adb5          Code  Wk  startup_stm32f2xx.o [1]
+SYSCFG_EXTILineConfig   0x08022911    0x50  Code  Gb  stm32f2xx_syscfg.o [1]
+SaveFileMPFromAT24      0x08021375   0x28e  Code  Gb  filemp.o [1]
+SaveFileMPToAT24        0x08021603   0x3e0  Code  Gb  filemp.o [1]
+Screens                 0x08025808  0x7d00  Data  Gb  Screen1.o [1]
+ScrollBarVert           0x0802033b    0xda  Code  Gb  Monitor.o [1]
+SemMenu                 0x200076c4     0x4  Data  Gb  OS_Obj.o [1]
+SendMsgClearQueueDrv    0x08018f9b    0x58  Code  Gb  TskDRV.o [1]
+SendMsgToTask           0x080188a5    0xe4  Code  Gb  TskDRV.o [1]
+SendS16Prm              0x08018d35    0x5a  Code  Gb  TskDRV.o [1]
+SetHandlerMenuDrive     0x0801c54b    0x5e  Code  Gb  LevelMenu.o [1]
+SetLastDrvAdr           0x08010285     0x8  Code  Gb  Menu.o [1]
+SetModeMenu             0x0801bb89    0x18  Code  Gb  Menu.o [1]
+SetModePrevMenu         0x08020575    0x14  Code  Gb  Menu.o [1]
+SetRootMenu             0x0801c295    0x58  Code  Gb  LevelMenu.o [1]
+SetSysClock             0x080391c9    0xb6  Code  Lc  system_stm32f2xx.o [1]
+SetWindows              0x08020753    0x44  Code  Gb  uc1698.o [1]
+ShowFileMPProgress      0x0802112d    0x70  Code  Gb  filemp.o [1]
+StartExtMem             0x0801f95f    0x84  Code  Gb  MakeOpis.o [1]
+StartStopDrive          0x08018c55    0x80  Code  Gb  TskDRV.o [1]
+StateKbd                0x200075ec    0x18  Data  Gb  Kbd.o [1]
+StrOut                  0x20006b3c   0x100  Data  Gb  Menu.o [1]
+StrOutFont              0x0801fc3d   0x1ba  Code  Gb  Monitor.o [1]
+SymOut                  0x0801fe01   0x2e2  Code  Gb  Monitor.o [1]
+SysTick_Handler         0x0803adc1          Code  Wk  startup_stm32f2xx.o [1]
+SyshkaIcon              0x0803992c    0x80  Data  Gb  Icon.o [1]
+SystemCoreClock         0x2000040c     0x4  Data  Gb  system_stm32f2xx.o [1]
+SystemInit              0x08039185    0x44  Code  Gb  system_stm32f2xx.o [1]
+TAMP_STAMP_IRQHandler   0x0803adcd          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_BRK_TIM9_IRQHandler
+                        0x08023505    0x26  Code  Gb  UART_manchester.o [1]
+TIM1_CC_IRQHandler      0x0803ae31          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_TRG_COM_TIM11_IRQHandler
+                        0x0803ae2d          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_UP_TIM10_IRQHandler
+                        0x0803ae29          Code  Wk  startup_stm32f2xx.o [1]
+TIM2_IRQHandler         0x0803ae35          Code  Wk  startup_stm32f2xx.o [1]
+TIM3_IRQHandler         0x0803ae39          Code  Wk  startup_stm32f2xx.o [1]
+TIM4_IRQHandler         0x0803ae3d          Code  Wk  startup_stm32f2xx.o [1]
+TIM5_Debug_Init         0x08020f69    0x4e  Code  Gb  DbgTim.o [1]
+TIM5_IRQHandler         0x0803ae8d          Code  Wk  startup_stm32f2xx.o [1]
+TIM6_DAC_IRQHandler     0x0803ae9d          Code  Wk  startup_stm32f2xx.o [1]
+TIM7_IRQHandler         0x0803aea1          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_BRK_TIM12_IRQHandler
+                        0x0803ae71          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_CC_IRQHandler      0x0803ae7d          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_TRG_COM_TIM14_IRQHandler
+                        0x0803ae79          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_UP_TIM13_IRQHandler
+                        0x0803ae75          Code  Wk  startup_stm32f2xx.o [1]
+TIM9MicroInit           0x0802347d    0x88  Code  Gb  UART_manchester.o [1]
+TIM_ARRPreloadConfig    0x080249e7    0x1c  Code  Gb  stm32f2xx_tim.o [1]
+TIM_ClearITPendingBit   0x08024b11     0x8  Code  Gb  stm32f2xx_tim.o [1]
+TIM_Cmd                 0x08024a15    0x1c  Code  Gb  stm32f2xx_tim.o [1]
+TIM_GetCounter          0x080249e3     0x4  Code  Gb  stm32f2xx_tim.o [1]
+TIM_ITConfig            0x08024afb    0x16  Code  Gb  stm32f2xx_tim.o [1]
+TIM_OC3Init             0x08024a31    0x8a  Code  Gb  stm32f2xx_tim.o [1]
+TIM_OCStructInit        0x08024ad9    0x22  Code  Gb  stm32f2xx_tim.o [1]
+TIM_SelectOnePulseMode  0x08024a03    0x12  Code  Gb  stm32f2xx_tim.o [1]
+TIM_SetAutoreload       0x080249df     0x4  Code  Gb  stm32f2xx_tim.o [1]
+TIM_TimeBaseInit        0x0802495d    0x6a  Code  Gb  stm32f2xx_tim.o [1]
+TIM_TimeBaseStructInit  0x080249c7    0x18  Code  Gb  stm32f2xx_tim.o [1]
+TIMuartWdSop            0x08025281    0x2c  Code  Gb  UART_manchester.o [1]
+TIMuartWdStart          0x08025259    0x28  Code  Gb  UART_manchester.o [1]
+TaskControl             0x0803a635    0x16  Code  Gb  TskControl.o [1]
+TaskDRV                 0x08018785   0x120  Code  Gb  TskDRV.o [1]
+TaskKBD                 0x08038ca1   0x1e4  Code  Gb  TskKbd.o [1]
+TaskLCD                 0x08039725    0x64  Code  Gb  TskLcd.o [1]
+TestValidDrv            0x080111dd   0x194  Code  Gb  Menu.o [1]
+Test_with_NVSA          0x0801c5d9   0x838  Code  Gb  LevelMenu.o [1]
+TextToStrEdit           0x08017a3d   0x3d8  Code  Gb  Menu.o [1]
+TxtToStr                0x0801850f    0x9a  Code  Gb  Menu.o [1]
+TypeLanguage            0x20007712     0x2  Data  Gb  Menu.o [1]
+UART4_IRQHandler        0x0803ae95          Code  Wk  startup_stm32f2xx.o [1]
+UART5_IRQHandler        0x0803ae99          Code  Wk  startup_stm32f2xx.o [1]
+UARTSem                 0x200076a0     0x4  Data  Gb  OS_Obj.o [1]
+UIntToStr               0x08018455    0xba  Code  Gb  Menu.o [1]
+UIntToStrEdit           0x080171d3   0x5f6  Code  Gb  Menu.o [1]
+USART1_IRQHandler       0x0802346b    0x12  Code  Gb  UART_manchester.o [1]
+USART2_IRQHandler       0x0803ae5d          Code  Wk  startup_stm32f2xx.o [1]
+USART3_IRQHandler       0x0803ae61          Code  Wk  startup_stm32f2xx.o [1]
+USART6_IRQHandler       0x0803aee1          Code  Wk  startup_stm32f2xx.o [1]
+USART_DMA_Start_RX      0x080232d1    0x58  Code  Gb  UART_manchester.o [1]
+USART_DMA_Start_TX      0x08023329    0x3c  Code  Gb  UART_manchester.o [1]
+USART_DeInit            0x08025089    0xa4  Code  Gb  stm32f2xx_usart.o [1]
+USART_Init              0x0802512d    0xee  Code  Gb  stm32f2xx_usart.o [1]
+UartBufRx               0x20005b6c   0x200  Data  Gb  UART_manchester.o [1]
+UartBufTx               0x200075cc    0x20  Data  Gb  UART_manchester.o [1]
+Uc1698_Update           0x080207fb    0xc8  Code  Gb  uc1698.o [1]
+UnixToStr               0x080186c9    0x4e  Code  Gb  Menu.o [1]
+UpdateCRC               0x080190f1    0x5a  Code  Gb  CRC.o [1]
+UpdateContrast          0x080208fd    0x20  Code  Gb  uc1698.o [1]
+UpdateMPFiles           0x08021a8d    0xfc  Code  Gb  filemp.o [1]
+UpdateStatusChange      0x08012f4f    0x72  Code  Gb  Menu.o [1]
+UprStrF                 0x200003c0    0x20  Data  Gb  Menu.o [1]
+UsageFault_Handler      0x0803aa69     0x2  Code  Gb  stm32f2xx_it.o [1]
+Ust_Copy                0x0801f9e3   0x11e  Code  Gb  MakeOpis.o [1]
+Version                 0x080394bd    0xfc  Code  Gb  VersionPo.o [1]
+VersionStr              0x08010010    0x11  Data  Lc  main.o [1]
+VideoRAM                0x20003474   0xc80  Data  Gb  uc1698.o [1]
+WWDG_IRQHandler         0x0803adc5          Code  Wk  startup_stm32f2xx.o [1]
+WaitKey                 0x0801bef9    0x56  Code  Gb  Kbd.o [1]
+WordStatusForLed        0x08012235    0x66  Code  Gb  Menu.o [1]
+WriteFileMPLink         0x080212cd    0x62  Code  Gb  filemp.o [1]
+WriteFileToDrv          0x08018a39    0x68  Code  Gb  TskDRV.o [1]
+WriteLnk                0x0801b009    0x30  Code  Gb  MicroProg.o [1]
+WriteMCUFlash           0x0801b9e3    0x5e  Code  Gb  MicroProg.o [1]
+WritePrm                0x08018be9    0x6c  Code  Gb  TskDRV.o [1]
+ZadanieIcon             0x080399ac    0x60  Data  Gb  Icon.o [1]
+ZadanieReverseIcon      0x08039a0c    0x60  Data  Gb  Icon.o [1]
+_EncodingSb_Mbtowc      0x08025793    0x30  Code  Gb  xencoding_sb.o [3]
+_EncodingSb_Wctomb      0x08025779    0x1a  Code  Gb  xencoding_sb.o [3]
+_GenldLarge             0x08024607   0x234  Code  Lc  xprintflarge.o [3]
+_IsdstStr               0x20000244     0x4  Data  Gb  setlocale.o [3]
+_LdtobLarge             0x080243f9   0x208  Code  Lc  xprintflarge.o [3]
+_LitobLarge             0x0802429b   0x10c  Code  Lc  xprintflarge.o [3]
+_LocaleEncoding         0x08025765     0xe  Code  Gb  setlocale.o [3]
+_LocaleReturnString     0x20000264    0x50  Data  Lc  setlocale.o [3]
+_Locale_Profile         0x20000248    0x1c  Data  Gb  setlocale.o [3]
+_Locale_aeabi_lconv     0x20000208    0x38  Data  Gb  localeconv.o [3]
+_Locale_lconv           0x200001b8    0x50  Data  Gb  localeconv.o [3]
+_Mbtowc                 0x080252cd    0x20  Code  Gb  xmbtowc.o [3]
+_PrintfLarge            0x0802399d   0x5ae  Code  Gb  xprintflarge.o [3]
+_PutcharsLarge          0x0802483b    0x2e  Code  Lc  xprintflarge.o [3]
+_PutstrLarge            0x08023f59   0x33c  Code  Lc  xprintflarge.o [3]
+_SProut                 0x0801f607     0xa  Code  Gb  xsprout.o [3]
+_TzoneStr               0x20000240     0x4  Data  Gb  setlocale.o [3]
+_Wctomb                 0x08025419    0x1a  Code  Gb  xwctomb.o [3]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x20020000           --   Gb  command line/config [2]
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x20000000           --   Gb  command line/config [2]
+__ICFEDIT_region_ROM_end__ {Abs}
+                        0x0805ffff           --   Gb  command line/config [2]
+__ICFEDIT_region_ROM_start__ {Abs}
+                        0x08010000           --   Gb  command line/config [2]
+__ICFEDIT_size_cstack__ {Abs}
+                        0x00000800           --   Gb  command line/config [2]
+__ICFEDIT_size_heap__ {Abs}
+                        0x00000200           --   Gb  command line/config [2]
+__ICFEDIT_size_version__ {Abs}
+                        0x00000100           --   Gb  command line/config [2]
+__aeabi_cdcmple         0x080255e5          Code  Gb  DblCmpLe.o [4]
+__aeabi_cfcmple         0x08021e0d          Code  Gb  FltCmpLe.o [4]
+__aeabi_cfrcmple        0x080248d1          Code  Gb  FltCmpGe.o [4]
+__aeabi_d2f             0x0802232d          Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x08024ead          Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x08024ed9          Code  Gb  DblToI32.o [4]
+__aeabi_ddiv            0x080220e5          Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x08024b89          Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x08024d2d          Code  Gb  DblSub.o [4]
+__aeabi_f2d             0x08021f19          Code  Gb  FltToDbl.o [4]
+__aeabi_f2iz            0x08021f69          Code  Gb  FltToS32.o [4]
+__aeabi_f2uiz           0x08021b89          Code  Gb  FltToU32.o [4]
+__aeabi_fadd            0x08021c8d          Code  Gb  FltAdd.o [4]
+__aeabi_fdiv            0x08021d11          Code  Gb  FltDiv.o [4]
+__aeabi_fmul            0x08021bb5          Code  Gb  FltMul.o [4]
+__aeabi_fsub            0x08021e31          Code  Gb  FltSub.o [4]
+__aeabi_i2d             0x080220b5          Code  Gb  I32ToDbl.o [4]
+__aeabi_i2f             0x08021fad          Code  Gb  I32ToFlt.o [4]
+__aeabi_ldiv0           0x08025805          Code  Gb  I64DivZer.o [5]
+__aeabi_memclr4         0x0802263d          Code  Gb  ABImemclr4.o [5]
+__aeabi_memcpy          0x08021039          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x08021059          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8         0x08021059          Code  Gb  ABImemcpy.o [5]
+__aeabi_memset          0x080248f5          Code  Gb  ABImemset.o [5]
+__aeabi_ui2d            0x080220c9          Code  Gb  I32ToDbl.o [4]
+__aeabi_ui2f            0x08021fc1          Code  Gb  I32ToFlt.o [4]
+__aeabi_uldivmod        0x080254b5          Code  Gb  I64DivMod.o [5]
+__cmain                 0x0803a64d          Code  Gb  cmain.o [5]
+__data_Aldata           0x2000766c     0x8  Data  Gb  xxmemxmalloc.o [3]
+__data_GetMemChunk      0x080257d9    0x2c  Code  Gb  xgetmemchunk.o [3]
+__exit                  0x08039031    0x14  Code  Gb  exit.o [6]
+__iar_Dnorm             0x080255a3    0x42  Code  Gb  xdnorm.o [4]
+__iar_Locale_lconv_init
+                        0x08025615    0x3a  Code  Gb  localeconv.o [3]
+__iar_Mbcurmax          0x0802535d     0xa  Code  Gb  xmbcurmax.o [3]
+__iar_Memchr            0x08025305          Code  Gb  memchr.o [5]
+__iar_Memset            0x080248f5          Code  Gb  ABImemset.o [5]
+__iar_Memset4_word      0x08024f55          Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x08024f55          Code  Gb  ABImemset48.o [5]
+__iar_Memset_word       0x080248fd          Code  Gb  ABImemset.o [5]
+__iar_Strchr            0x080252ed          Code  Gb  strchr.o [5]
+__iar_Strstr            0x08024b19    0x2c  Code  Gb  strstr.o [3]
+__iar_d2uiz             0x08024ee5          Code  Gb  DblToI32.o [4]
+__iar_dadd              0x08025691          Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x08039dc1    0x28  Code  Gb  data_init.o [5]
+__iar_dlib_perthread_access
+                        0x08025807     0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x08024d41          Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x08024d53          Code  Gb  DblSub.o [4]
+__iar_fadd              0x08021c9d          Code  Gb  FltAdd.o [4]
+__iar_fsub              0x08021e41          Code  Gb  FltSub.o [4]
+__iar_fsubStart         0x08021e51          Code  Gb  FltSub.o [4]
+__iar_lz77_init3        0x08038ee7   0x142  Code  Gb  lz77_init.o [5]
+__iar_program_start     0x0803aa6d          Code  Gb  cstartup_M.o [5]
+__iar_ui2d              0x080220cd          Code  Gb  I32ToDbl.o [4]
+__iar_ui2f              0x08021fc5          Code  Gb  I32ToFlt.o [4]
+__iar_zero_init3        0x0801bc5b    0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0803a663     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08010100          Data  Gb  startup_stm32f2xx.o [1]
+_call_main              0x0803a659          Code  Gb  cmain.o [5]
+_exit                   0x0803a66d          Code  Gb  cexit.o [5]
+_main                   0x0803a65f          Code  Gb  cmain.o [5]
+abort                   0x08039029     0x6  Code  Gb  abort.o [3]
+abs                     0x08021bad     0x8  Code  Gb  abs.o [3]
+absU16                  0x080171c3    0x10  Code  Gb  Menu.o [1]
+aniLgTabl               0x08039a6c    0x54  Data  Gb  Calc_New.o [1]
+autoRepeatKey           0x0801bd0d    0x9a  Code  Gb  Kbd.o [1]
+avarIcon                0x08039fe8    0x20  Data  Gb  Icon.o [1]
+avar_iIcon              0x0803a008    0x20  Data  Gb  Icon.o [1]
+ch_to_smhdmy            0x08016a79    0xfe  Code  Gb  Menu.o [1]
+chargeIcon              0x080397ac    0x80  Data  Gb  Icon.o [1]
+debugStop               0x08021035     0x2  Code  Gb  DbgTim.o [1]
+div                     0x08025681     0xe  Code  Gb  div.o [3]
+downSmall               0x0803a128    0x20  Data  Gb  Icon.o [1]
+drawParamEdit           0x0801838b    0x1c  Code  Gb  Menu.o [1]
+drawParamEditHighLim    0x080183c9    0x1c  Code  Gb  Menu.o [1]
+drawParamEditLowLim     0x080183a7    0x1c  Code  Gb  Menu.o [1]
+dummyDMA                0x20007739     0x1  Data  Gb  dma.o [1]
+dumpRx                  0x20007738     0x1  Data  Gb  UART_manchester.o [1]
+exit                    0x0803a667     0x4  Code  Gb  exit.o [3]
+filtrKey                0x0801bc7d    0x66  Code  Gb  Kbd.o [1]
+findFirstKey            0x0801bce3    0x2a  Code  Gb  Kbd.o [1]
+flag_from_status_word2  0x20007731     0x1  Data  Lc  Menu.o [1]
+fontBig                 0x200003f8     0x8  Data  Gb  Font.o [1]
+fontMiddle              0x20000400     0x8  Data  Gb  Font.o [1]
+fontNormal              0x200003f0     0x8  Data  Gb  Font.o [1]
+forceLED                0x08039633    0x22  Code  Gb  LED.o [1]
+free                    0x08025435    0x7a  Code  Gb  xxmemxfree.o [3]
+gFontMiddle             0x08033e80  0x2870  Data  Gb  Font.o [1]
+gFontNormal             0x080366f0  0x1c20  Data  Gb  Font.o [1]
+gIsNvsaOld              0x20007730     0x1  Data  Gb  Menu.o [1]
+getHelp                 0x08015249    0xa4  Code  Gb  Menu.o [1]
+getHelpPrm              0x080151f9    0x50  Code  Gb  Menu.o [1]
+getNameMenu             0x08015389    0xb8  Code  Gb  Menu.o [1]
+getNamePrm              0x080152ed    0x9c  Code  Gb  Menu.o [1]
+getPntCurDP             0x080210b1    0x50  Code  Gb  Menu.o [1]
+getPntForLng            0x08014e3d    0x50  Code  Gb  Menu.o [1]
+getStatusCharge         0x0801ce67     0xa  Code  Gb  SetupMenu.o [1]
+getStatusWorkAll        0x0801ce5d     0xa  Code  Gb  SetupMenu.o [1]
+initEdIzm               0x08014e8d    0x7a  Code  Gb  Menu.o [1]
+initKeyMK               0x0801be4f    0xaa  Code  Gb  Kbd.o [1]
+initLED                 0x080395b9    0x7a  Code  Gb  LED.o [1]
+initMessPult            0x08014f15   0x2e0  Code  Gb  Menu.o [1]
+initOS                  0x08023665   0x144  Code  Gb  initOSfile.o [1]
+lastDrvAdr              0x20007732     0x1  Data  Gb  Menu.o [1]
+localIcon               0x0803a068    0x20  Data  Gb  Icon.o [1]
+localeconv              0x0802564f    0x16  Code  Gb  localeconv.o [3]
+main                    0x0801bba1    0x62  Code  Gb  main.o [1]
+malloc                  0x08025369    0xac  Code  Gb  xxmemxmalloc.o [3]
+memchr                  0x08025305          Code  Gb  memchr.o [5]
+memcmp                  0x08023939          Code  Gb  memcmp.o [5]
+memcpy                  0x0801914b    0x16  Code  Gb  modbus.o [1]
+memset                  0x08020589    0x16  Code  Gb  SetupMenu.o [1]
+monthSum                0x0803a2e4    0x1c  Data  Gb  Menu.o [1]
+monthSumEx              0x0803a300    0x1c  Data  Gb  Menu.o [1]
+msgMasEdIzm             0x080392a8   0x114  Data  Gb  Menu.o [1]
+msgStrings              0x20000408     0x4  Data  Gb  MessageFlash.o [1]
+msgStringsAlarm         0x20000000   0x118  Data  Gb  MessageFlash.o [1]
+msgStringsMess          0x200002b4    0x5c  Data  Gb  MessageFlash.o [1]
+msgStringsTitle         0x20000348    0x2c  Data  Gb  MessageFlash.o [1]
+newMode                 0x20007688     0x4  Data  Gb  Menu.o [1]
+noValidData             0x0803ad90     0x4  Data  Gb  Menu.o [1]
+parseWordStatus         0x08011d49   0x34c  Code  Gb  Menu.o [1]
+parseWordStatus2        0x080120ad   0x182  Code  Gb  Menu.o [1]
+parseWordStatusForLed   0x080122a1    0xaa  Code  Gb  Menu.o [1]
+pntMsgReqDrvIn          0x2000754c    0x20  Data  Gb  TskDRV.o [1]
+pntMsgReqDrvInStartStop
+                        0x200075ac    0x20  Data  Gb  TskDRV.o [1]
+pntMsgReqDrvOut         0x2000756c    0x20  Data  Gb  TskDRV.o [1]
+pntMsgReqDrvOutStartStop
+                        0x2000758c    0x20  Data  Gb  TskDRV.o [1]
+povtor                  0x0803a168    0x20  Data  Gb  LevelMenu.o [1]
+prevMode                0x2000768c     0x4  Data  Gb  Menu.o [1]
+readKeyMK               0x0801bda7    0xa8  Code  Gb  Kbd.o [1]
+readyIcon               0x0803a0a8    0x20  Data  Gb  Icon.o [1]
+refreshFromTemp         0x080113a9    0x2c  Code  Gb  Menu.o [1]
+remoteIcon              0x0803a088    0x20  Data  Gb  Icon.o [1]
+rt_hw_serial_isr        0x08023365   0x106  Code  Gb  UART_manchester.o [1]
+rt_hw_usart_init        0x08023261    0x70  Code  Gb  UART_manchester.o [1]
+saveToTemp              0x08011375    0x2c  Code  Gb  Menu.o [1]
+scale                   0x080243ad    0x46  Code  Lc  xprintflarge.o [3]
+setContrast             0x080208c3    0x3a  Code  Gb  uc1698.o [1]
+spiInitAT45_HARD        0x08019161   0x144  Code  Gb  Spi.o [1]
+spiInitFRAM             0x0801958f    0x24  Code  Gb  Spi.o [1]
+spiInitFRAM_HARD        0x080195b3    0x80  Code  Gb  Spi.o [1]
+spiInitFor25LC256       0x0803a718    0x14  Data  Gb  Spi.o [1]
+sprintf                 0x0801fc09    0x34  Code  Gb  sprintf.o [3]
+startRxIdle             0x08025239    0x20  Code  Gb  UART_manchester.o [1]
+startRxReceive          0x080252ad    0x20  Code  Gb  UART_manchester.o [1]
+staskClear              0x08023655    0x10  Code  Gb  initOSfile.o [1]
+stopByDCIcon            0x08039684    0xa0  Data  Gb  Icon.o [1]
+stopIcon                0x0803a028    0x20  Data  Gb  Icon.o [1]
+stop_iIcon              0x0803a048    0x20  Data  Gb  Icon.o [1]
+strcat                  0x08022097    0x1c  Code  Gb  strcat.o [3]
+strchr                  0x080252ed          Code  Gb  strchr.o [5]
+strcpy                  0x0802488d          Code  Gb  strcpy.o [5]
+strlen                  0x08020dbd          Code  Gb  strlen.o [5]
+strstr                  0x08020dad    0x10  Code  Gb  Menu.o [1]
+swapU16                 0x0801f929    0x14  Code  Gb  MakeOpis.o [1]
+swapU32                 0x0801f93d    0x22  Code  Gb  MakeOpis.o [1]
+tmpArUart               0x2000727c    0x80  Data  Gb  TskDRV.o [1]
+txtNoLnk                0x08039d98    0x28  Data  Gb  MicroProg.o [1]
+uart1                   0x20000374    0x2c  Data  Gb  UART_manchester.o [1]
+upSmall                 0x0803a148    0x20  Data  Gb  Icon.o [1]
+
+
+[1] = E:\WORK\Triol\AT24_NVSA\WIRED_PULT_P24\36_010_3_REPOS\36_010_WIRED_PULT\P24\Debug\Obj
+[2] = command line
+[3] = dl7M_tlf.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  90 158 bytes of readonly  code memory
+  86 058 bytes of readonly  data memory (+ 29 absolute)
+  44 356 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

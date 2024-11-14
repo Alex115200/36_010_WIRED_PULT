@@ -1,0 +1,152 @@
+;  UST1 ----------------------
+;CompAttrAdd "UST1" "VALUE" "Контраст"
+;  ----------------------
+;  UST2 ----------------------
+;CompAttrAdd "UST2" "VALUE" "Скор. обмена"
+;  ----------------------
+;  UST3 ----------------------
+;CompAttrModify "UST3" "OFSHLP" "Время показа всплывающих сообщений"
+;CompAttrAdd "UST3" "VALUE" "T вспл. сообщ."
+;CompAttrModify "UST3" "FORMAT" "XX сек"
+;  ----------------------
+;  UST4 ----------------------
+;CompAttrAdd "UST4" "VALUE" "Температ."
+;  ----------------------
+;  UST5 ----------------------
+;CompAttrAdd "UST5" "VALUE" "Уст. приводов"
+;  ----------------------
+;  UST6 ----------------------
+;CompAttrAdd "UST6" "VALUE" "Местн./дист."
+;  ----------------------
+;  UST7 ----------------------
+;CompAttrAdd "UST7" "VALUE" "Адр. для местн."
+;  ----------------------
+;  UST8 ----------------------
+;CompAttrAdd "UST8" "VALUE" "Адр. для добав."
+;  ----------------------
+;  UST9 ----------------------
+;CompAttrModify "UST9" "FLGPRM" "33441"
+;CompAttrAdd "UST9" "VALUE" "Добав. прив."
+;  ----------------------
+;  UST10 ----------------------
+;CompAttrAdd "UST10" "VALUE" "Уставки пульта"
+;  ----------------------
+;  UST11 ----------------------
+;CompAttrAdd "UST11" "VALUE" "Адр. прив. чт."
+;  ----------------------
+;  UST12 ----------------------
+;CompAttrAdd "UST12" "VALUE" "Читать уставки"
+;  ----------------------
+;  UST13 ----------------------
+;CompAttrAdd "UST13" "VALUE" "Уставки привода"
+;  ----------------------
+;  UST14 ----------------------
+;CompAttrAdd "UST14" "VALUE" "Уставки пульта"
+;  ----------------------
+;  UST15 ----------------------
+;CompAttrAdd "UST15" "VALUE" "Адр. прив. зап."
+;  ----------------------
+;  UST16 ----------------------
+;CompAttrAdd "UST16" "VALUE" "Зап. уставки"
+;  ----------------------
+;  UST17 ----------------------
+;CompAttrAdd "UST17" "VALUE" "Пароль польз."
+;  ----------------------
+;  UST18 ----------------------
+;CompAttrAdd "UST18" "VALUE" "Эталон польз."
+;  ----------------------
+;  UST19 ----------------------
+;CompAttrAdd "UST19" "VALUE" "Пароль техн."
+;  ----------------------
+;  UST20 ----------------------
+;CompAttrAdd "UST20" "VALUE" "Эталон техн."
+;  ----------------------
+;  UST21 ----------------------
+;CompAttrAdd "UST21" "VALUE" "Пароль маст."
+;  ----------------------
+;  UST22 ----------------------
+;CompAttrAdd "UST22" "VALUE" "Эталон маст."
+;  ----------------------
+;  UST23 ----------------------
+;CompAttrAdd "UST23" "VALUE" "Версия ПО"
+;  ----------------------
+;  TEK24 ----------------------
+;CompAttrAdd "TEK24" "VALUE" "gggg"
+;  ----------------------
+;  ----------------------
+;  ----------------------
+;RefdesChange "UST1" "UST60001"
+;RefdesChange "UST2" "UST60002"
+;RefdesChange "UST3" "UST60003"
+;RefdesChange "UST4" "UST60004"
+;RefdesChange "UST5" "UST60005"
+;RefdesChange "UST6" "UST60006"
+;RefdesChange "UST7" "UST60007"
+;RefdesChange "UST8" "UST60008"
+;RefdesChange "UST9" "UST60009"
+;RefdesChange "UST10" "UST60010"
+;RefdesChange "UST11" "UST60011"
+;RefdesChange "UST12" "UST60012"
+;RefdesChange "UST13" "UST60013"
+;RefdesChange "UST14" "UST60014"
+;RefdesChange "UST15" "UST60015"
+;RefdesChange "UST16" "UST60016"
+;RefdesChange "UST17" "UST60017"
+;RefdesChange "UST18" "UST60018"
+;RefdesChange "UST19" "UST60019"
+;RefdesChange "UST20" "UST60020"
+;RefdesChange "UST21" "UST60021"
+;RefdesChange "UST22" "UST60022"
+;RefdesChange "UST23" "UST60023"
+;RefdesChange "TEK24" "TEK60024"
+;  ----------------------
+;  ----------------------
+;RefdesChange "UST60001" "UST1"
+;RefdesChange "UST60002" "UST2"
+;RefdesChange "UST60003" "UST3"
+;RefdesChange "UST60004" "UST4"
+;RefdesChange "UST60005" "UST5"
+;RefdesChange "UST60006" "UST6"
+;RefdesChange "UST60007" "UST7"
+;RefdesChange "UST60008" "UST8"
+;RefdesChange "UST60009" "UST9"
+;RefdesChange "UST60010" "UST10"
+;RefdesChange "UST60011" "UST11"
+;RefdesChange "UST60012" "UST12"
+;RefdesChange "UST60013" "UST13"
+;RefdesChange "UST60014" "UST14"
+;RefdesChange "UST60015" "UST15"
+;RefdesChange "UST60016" "UST16"
+;RefdesChange "UST60017" "UST17"
+;RefdesChange "UST60018" "UST18"
+;RefdesChange "UST60019" "UST19"
+;RefdesChange "UST60020" "UST20"
+;RefdesChange "UST60021" "UST21"
+;RefdesChange "UST60022" "UST22"
+;RefdesChange "UST60023" "UST23"
+;RefdesChange "TEK60024" "TEK24"
+;  ----------------------
+;  ----------------------
+;CompAttrAdd "GRP0" "Value" "Пар. пульта"
+;CompAttrAdd "GRP0" "FLAGS" "15"
+;CompAttrAdd "GRP0" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;CompAttrAdd "GRP1" "Value" "Уст. приводов"
+;CompAttrAdd "GRP1" "FLAGS" "15"
+;CompAttrAdd "GRP1" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;CompAttrAdd "GRP2" "Value" "Чтен. уставок"
+;CompAttrAdd "GRP2" "FLAGS" "15"
+;CompAttrAdd "GRP2" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;CompAttrAdd "GRP3" "Value" "Зап. уставок"
+;CompAttrAdd "GRP3" "FLAGS" "15"
+;CompAttrAdd "GRP3" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;CompAttrAdd "GRP10" "Value" "Ввод пароля"
+;CompAttrAdd "GRP10" "FLAGS" "15"
+;CompAttrAdd "GRP10" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;CompAttrAdd "GRP17" "Value" "ххх"
+;CompAttrAdd "GRP17" "FLAGS" "15"
+;CompAttrAdd "GRP17" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;CompAttrAdd "GRP99" "Value" "Версия ПО"
+;CompAttrAdd "GRP99" "FLAGS" "15"
+;CompAttrAdd "GRP99" "HELP" "Параметры в группе отображают\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+;  ----------------------
+;  ----------------------

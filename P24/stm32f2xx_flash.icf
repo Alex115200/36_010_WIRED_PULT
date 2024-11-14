@@ -1,0 +1,45 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_0.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x08010100;
+/*-Memory Regions-*/
+define symbol __ICFEDIT_region_ROM_start__ = 0x08010000; // Начало размещения программы пульта
+define symbol __ICFEDIT_region_ROM_end__   = 0x0805FFFF; // Конец размещения программы пульта - желательно указать в явном виде, на случай превышения диапазонов использования памяти
+define symbol __ICFEDIT_region_RAM_start__ = 0x20000000; // Размер доступной RAM памяти
+define symbol __ICFEDIT_region_RAM_end__   = 0x20020000;
+define symbol __ICFEDIT_region_VER_start__ = 0x08010000; // Начало вспомогательной секции
+define symbol __ICFEDIT_region_VER_end__   = 0x080100FF; // Конец вспомогательной секции
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__  = 0x800;
+define symbol __ICFEDIT_size_heap__    = 0x200;
+define symbol __ICFEDIT_size_version__ = 0x100;
+/*-Exports-*/
+export symbol __ICFEDIT_region_ROM_start__;
+export symbol __ICFEDIT_region_ROM_end__;
+export symbol __ICFEDIT_region_RAM_start__;
+export symbol __ICFEDIT_region_RAM_end__;
+export symbol __ICFEDIT_size_version__;
+export symbol __ICFEDIT_size_cstack__;
+export symbol __ICFEDIT_size_heap__;
+/**** End of ICF editor section. ###ICF###*/
+
+
+define memory mem with size = 4G;
+define region VER_region   = mem:[from __ICFEDIT_region_VER_start__   to __ICFEDIT_region_VER_end__]; // Объявление вспомогательной секции 
+define region ROM_region   = mem:[from __ICFEDIT_region_ROM_start__   to __ICFEDIT_region_ROM_end__]; 
+define region RAM_region   = mem:[from __ICFEDIT_region_RAM_start__   to __ICFEDIT_region_RAM_end__];
+
+define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
+
+
+initialize by copy { readwrite };
+do not initialize  { section .noinit };
+
+place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
+
+place in VER_region   { readonly section .versionsection }; // Помещаем в VER_region секцию versionsection, которая объявляется в main.c
+place in ROM_region   { readonly };
+place in RAM_region   { readwrite,
+                        block CSTACK, block HEAP };

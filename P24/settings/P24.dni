@@ -1,0 +1,289 @@
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=-2056204554
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[TraceHelper]
+Enabled=0
+ShowSource=1
+[Breakpoints]
+Bp0=_ "EMUL_DATA" "0x10005a2c" 0 0 0 116 0 "" 0 "" 0 0 0 4294967295
+Bp1=_ "EMUL_DATA" "0x10001400" 0 0 0 148 0 "" 0 "" 0 0 0 4294967295
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\Func\MicroProg.c}.466.9@1" 1 0 0 0 "" 0 "" 0
+Bp3=_ "STD_CODE" "{$PROJ_DIR$\Func\MicroProg.c}.508.9@1" 1 0 0 0 "" 0 "" 0
+Bp4=_ "STD_CODE" "{$PROJ_DIR$\cstartup_M.s}.134.1@1" 1 0 0 0 "" 0 "" 0
+Bp5=_ "STD_CODE" "{$PROJ_DIR$\OS\OSConfig\os_cpu_a.asm}.132.1@1" 1 0 0 0 "" 0 "" 0
+Bp6=_ "STD_CODE" "0x0000B714" 0 0 0 0 "" 0 "" 0
+Count=7
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=72000000
+ClockAutoDetect=1
+ClockWanted=7500000
+JtagSpeed=6666666
+Prescaler=11
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[JLinkDriver]
+CStepIntDis=_ 0
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000004
+[RecentFlashDownload]
+Path=Y:\Общие папки подразделений\ОТД\ПО наладчикам\MKAR_PU24\hex\36_006_0.hex
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[struct_types]
+Fmt0=AllPrm_Type-ADR_FOR_LOCAL	4	0
+Fmt1=DescriptorPrm_type-AdrVal	4	0
+Fmt2=DescriptorPrm_type-DefaultSet	4	0
+Fmt3=DescriptorPrm_type-Functional	4	0
+Fmt4=DescriptorPrm_type-HighLim	4	0
+Fmt5=DescriptorPrm_type-LowLim	4	0
+Fmt6=DescriptorPrm_type-OfsHlp	4	0
+Fmt7=DescriptorPrm_type-OfsName	4	0
+Fmt8=DescriptorPrm_type-OfsTxt	4	0
+Fmt9=DescriptorPrm_type-Unit	4	0
+Fmt10=DescriptorPrm_type-Visible	4	0
+Fmt11=DescriptorStr_type-LenString	4	0
+Fmt12=DescriptorStr_type-PntString	4	0
+Fmt13=FileMPLink-IsFullSign	3	0
+Fmt14=FileMPLink-LinkCrc	4	0
+Fmt15=FlagOpisMenu_type-Parole1Vis	4	0
+Fmt16=FlagOpisMenu_type-Parole2Vis	4	0
+Fmt17=FlagOpisMenu_type-Parole3Vis	4	0
+Fmt18=FlagOpisMenu_type-TypeMenu	4	0
+Fmt19=Functional_type-functMask	4	0
+Fmt20=GPIO_InitTypeDef-GPIO_Pin	4	0
+Fmt21=HeadOfFile_type-AdrListPrmJrn	4	0
+Fmt22=HeadOfFile_type-DeviceType	3	0
+Fmt23=HeadOfFile_type-FileCrc	4	0
+Fmt24=HeadOfFile_type-HeaderCrc	4	0
+Fmt25=HeadOfFile_type-JrnStart	4	0
+Fmt26=HeadOfFile_type-MenuStart	3	0
+Fmt27=HeadOfFile_type-MessPultStart	4	0
+Fmt28=HeadOfFile_type-NumOfRecAl	4	0
+Fmt29=HeadOfFile_type-NumOfRecFlt	4	0
+Fmt30=HeadOfFile_type-NumPrmInJrn	4	0
+Fmt31=HeadOfFile_type-Pnt1LngTxt	4	0
+Fmt32=HeadOfFile_type-PrmStart	3	0
+Fmt33=HeadOfFile_type-QuantityFildJrn	4	0
+Fmt34=HeadOfFile_type-QuantityJrn	4	0
+Fmt35=HeadOfFile_type-QuantityLng	4	0
+Fmt36=HeadOfFile_type-QuantityMenu	4	0
+Fmt37=HeadOfFile_type-QuantityMessPult	4	0
+Fmt38=HeadOfFile_type-QuantityPrm	3	0
+Fmt39=HeadOfFile_type-QuantityUst	3	0
+Fmt40=HeadOfFile_type-Sign	4	0
+Fmt41=HeadOfFile_type-SizeOfFileDescr	3	0
+Fmt42=HeadOfFile_type-TopOfJrnAl	4	0
+Fmt43=HeadOfFile_type-TopOfJrnFlt	4	0
+Fmt44=HeadOfLanguage_type-PntMessPultMass	4	0
+Fmt45=HeadOfLanguage_type-PntTxtEdIzm	4	0
+Fmt46=HeadOfLanguage_type-PntTxtGrp	4	0
+Fmt47=HeadOfLanguage_type-PntTxtHelp	4	0
+Fmt48=HeadOfLanguage_type-PntTxtMGrp	4	0
+Fmt49=HeadOfLanguage_type-PntTxtMess	4	0
+Fmt50=HeadOfLanguage_type-PntTxtPrm	4	0
+Fmt51=HeadOfLanguage_type-PntTxtTxt	4	0
+Fmt52=HeadOfLanguage_type-QuantityHelp	3	0
+Fmt53=HeadOfLanguage_type-SectSize	4	0
+Fmt54=LnkNetFDP_type-Crc	4	0
+Fmt55=LnkNetFDP_type-Lnk	4	0
+Fmt56=MsgReqDrvIn_type-AdrData	4	0
+Fmt57=MsgReqDrvIn_type-NumParam	3	0
+Fmt58=MsgReqDrvIn_type-SzOut	3	0
+Fmt59=OpisPrm_type-HighLim	4	0
+Fmt60=OpisPrm_type-LowLim	4	0
+Fmt61=StateKbd_type-TimeDrebezg	3	0
+Fmt62=Status_type-NumGrp	3	0
+Fmt63=Status_type-NumPrm	3	0
+Fmt64=at45status_type-all	1	0
+Fmt65=portUart_type-bufRx	4	0
+Fmt66=portUart_type-bufTx	4	0
+Fmt67=statusDRV_tipe-all	4	0
+Fmt68=wm_type-AdrPrm	4	0
+Fmt69=wm_type-Flags	4	0
+[array_types]
+Fmt0=OS_STK[1024]	4	0
+Fmt1=OS_STK[128]	4	0
+Fmt2=u16[2]	4	0
+Fmt3=u16[64]	4	0
+Fmt4=u8[122]	3	0
+Fmt5=u8[128]	4	0
+Fmt6=u8[16]	4	0
+Fmt7=u8[23]	4	0
+Fmt8=unsigned char[200]	3	0
+Fmt9=unsigned char[32]	5	0
+Fmt10=unsigned short[2]	4	0
+[watch_formats]
+Fmt0={W}0:((98<<7) + 1)	4	0
+Fmt1={W}0:((98<<7) + 3)	4	0
+Fmt2={W}0:((98<<7) + 5)	4	0
+Fmt3={W}0:((98<<8) + 1)	4	0
+Fmt4={W}0:((u32)AdrFRAM & 0xFF)	4	0
+Fmt5={W}0:((u8*)AdrLpc)[0]	4	0
+Fmt6={W}0:((u8*)AdrLpc)[1]	4	0
+Fmt7={W}0:(pntMsgIn->AdrData)&0xff80	4	0
+Fmt8={W}0:ATAdr	4	0
+Fmt9={W}0:Crc	4	0
+Fmt10={W}0:HOF	3	0
+Fmt11={W}0:LEDState.word[1]	4	0
+Fmt12={W}0:MPOpis.PntMicroProg->CRC16_NV	4	0
+Fmt13={W}0:OSEndiannessTest	4	0
+Fmt14={W}0:OriginalCrc	4	0
+Fmt15={W}0:STMAdr	4	0
+Fmt16={W}0:StartAddr	4	0
+Fmt17={W}0:Sz	4	0
+Fmt18={W}0:VersionPP	4	0
+Fmt19={W}0:adrCurr	4	0
+Fmt20={W}0:contr	3	0
+Fmt21={W}0:crc	4	0
+Fmt22={W}0:crc_prg	4	0
+Fmt23={W}0:err	3	0
+Fmt24={W}0:fontBig.propertyFont.height	3	0
+Fmt25={W}0:i	3	0
+Fmt26={W}0:link	4	0
+Fmt27={W}0:maskKey	4	0
+Fmt28={W}0:pageBorder	4	0
+Fmt29={W}0:ramPnt	4	0
+Fmt30={W}0:spp	4	0
+Fmt31={W}0:temp	4	0
+Fmt32={W}0:tmp	1	0
+Fmt33={W}0:usTmp1	4	0
+Fmt34={W}0:usTmp2	4	0
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title0=I0
+Symbol0=0 4 1
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+Title0=Ch0
+Symbol0=0 4 1
+Title1=Ch1
+Symbol1=0 4 1
+Title2=Ch2
+Symbol2=0 4 1
+Title3=Ch3
+Symbol3=0 4 1
+SumSortOrder=0
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 1
+LogFile=_ "$PROJ_DIR$\LogFile1.log"
+Category=_ 8
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=3
+[Breakpoints2]
+Count=0
+[Aliases]
+A0=_ "D:\User\Sosnovchik\PULT_SVN\P24\Func\MicroProg.c" ""
+A1=_ "D:\User\Sosnovchik\PULT_SVN\P24\Main\main.c" ""
+A2=_ "D:\Work\PultP24\000_P24\P24\STM32F2xx_StdPeriph_Lib_V1.1.0\Libraries\CMSIS\Device\ST\STM32F2xx\Source\Templates\iar\startup_stm32f2xx.s" ""
+A3=_ "E:\Temp\AT24_11_014\PULT_SVN_36_010_1\P24\Func\Menu.c" ""
+A4=_ "E:\Temp\AT24_11_014\PULT_SVN_36_010_1\P24\Func\MicroProg.c" ""
+A5=_ "E:\Temp\AT24_11_014\PULT_SVN_36_010_1\P24\HrdDrivers\Kbd.c" ""
+A6=_ "E:\Temp\AT24_11_014\PULT_SVN_36_010_1\P24\Main\main.c" ""
+A7=_ "E:\Temp\AT24_11_014\PULT_SVN_36_010_1\P24\STM32F2xx_StdPeriph_Lib_V1.1.0\stm32f2xx_it.c" ""
+A8=_ "F:\Andre\programms\PultP24\000_P24\P24\Main\main.c" ""
+Count=9
+SuppressDialog=0
