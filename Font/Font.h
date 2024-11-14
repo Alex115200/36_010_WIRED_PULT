@@ -10,6 +10,9 @@ extern font_type                fontMiddle;
 extern font_type                fontNormal;
 extern font_type                fontMini;
 extern font_type                fontArial22;
+
+extern font_type                fontArial10;
+
 //===================================================================
 
 #endif

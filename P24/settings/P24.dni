@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-2056204554
+Checksum=-165079514
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -52,9 +52,9 @@ MixedMode=1
 OverrideDefaultClocks=0
 CpuClock=72000000
 ClockAutoDetect=1
-ClockWanted=7500000
-JtagSpeed=6666666
-Prescaler=11
+ClockWanted=2000000
+JtagSpeed=2000000
+Prescaler=36
 TimeStampPrescIndex=0
 TimeStampPrescData=0
 PcSampCYCTAP=1
@@ -72,18 +72,6 @@ TraceStallIfFIFOFull=0x00000000
 TracePortSize=0x00000004
 [RecentFlashDownload]
 Path=Y:\Общие папки подразделений\ОТД\ПО наладчикам\MKAR_PU24\hex\36_006_0.hex
-[Interrupts]
-Enabled=1
-[MemoryMap]
-Enabled=0
-Base=0
-UseAuto=0
-TypeViolation=1
-UnspecRange=1
-ActionState=1
-[Trace1]
-Enabled=0
-ShowSource=1
 [struct_types]
 Fmt0=AllPrm_Type-ADR_FOR_LOCAL	4	0
 Fmt1=DescriptorPrm_type-AdrVal	4	0
@@ -212,12 +200,6 @@ Title0=I0
 Symbol0=0 4 1
 LiveEnabled=0
 LiveFile=PowerLogLive.log
-[DataLog]
-LogEnabled=0
-SumEnabled=0
-GraphEnabled=0
-ShowTimeLog=1
-ShowTimeSum=1
 [EventLog]
 LogEnabled=0
 SumEnabled=0
@@ -233,6 +215,28 @@ Symbol2=0 4 1
 Title3=Ch3
 Symbol3=0 4 1
 SumSortOrder=0
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
 [InterruptLog]
 LogEnabled=0
 SumEnabled=0
@@ -240,6 +244,10 @@ GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
 SumSortOrder=0
+[Disassemble mode]
+mode=3
+[Breakpoints2]
+Count=0
 [Log file]
 LoggingEnabled=_ 1
 LogFile=_ "$PROJ_DIR$\LogFile1.log"
@@ -247,34 +255,6 @@ Category=_ 8
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Trace2]
-Enabled=0
-ShowSource=0
-[SWOTraceWindow]
-PcSampling=0
-InterruptLogs=0
-ForcedTimeStamps=0
-EventCPI=0
-EventEXC=0
-EventFOLD=0
-EventLSU=0
-EventSLEEP=0
-[PowerProbe]
-Frequency=10000
-Probe0=I0
-ProbeSetup0=2 1 1 2 0 0
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=3
-Graph=0
-Symbiont=0
-Exclusions=
-[Disassemble mode]
-mode=3
-[Breakpoints2]
-Count=0
 [Aliases]
 A0=_ "D:\User\Sosnovchik\PULT_SVN\P24\Func\MicroProg.c" ""
 A1=_ "D:\User\Sosnovchik\PULT_SVN\P24\Main\main.c" ""
@@ -287,3 +267,23 @@ A7=_ "E:\Temp\AT24_11_014\PULT_SVN_36_010_1\P24\STM32F2xx_StdPeriph_Lib_V1.1.0\s
 A8=_ "F:\Andre\programms\PultP24\000_P24\P24\Main\main.c" ""
 Count=9
 SuppressDialog=0
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=

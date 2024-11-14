@@ -21,6 +21,8 @@ void                *pntMsgReqDrvInStartStop[SzQueue];
 u8 WaitMsgFromDrv(MsgReqDrvIn_type *pMsg);
 Drv_err_type ReQuestDrv(OS_EVENT *QueueMsg, MsgReqDrvIn_type *MsgIn);
 void ClearQueueDrv(void);
+u32  MissingFileWord;
+void sendRequest(portUart_type *uart);
 
 //======================================================================
 // ЗАДАЧА ПРИЕМА И ПЕРЕДАЧИ ЗАПРОСОВ ДЛЯ ПРИВОДА
@@ -84,53 +86,134 @@ __noreturn void TaskDRV(void *pdata)
 
     while(1){
       ResetWD(tsk_drv);
-       OSSemPend( UARTSem, 1000, &err );   
-       // Вешаем на семафоре
-       if( (err == OS_ERR_NONE) || (uart->state == NON_TA)  ){      // Получен ответ от порта или первый проход
-            errTA = Ok_err;
-            if( uart->state == RX_READY )
-            {                          // Вычитываем ответ
-                size = uart->rx_size / 2;
-                ManchesterDecode( DataBuf, UartBufRx, size );       // Раскодировали из Манчестера
-                errTA = SendMsgToTask(pntMsgIn, DataBuf, size );    // Отправляем сообщение обратно
-            }
+      OSSemPend( UARTSem, 1000, &err );     // Вешаем на семафоре
+     
+      if(uart->state == NON_TA){                                  // Первый запрос
+          pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);      // Вынимаем запрос с очереди
+          
+          if(pntMsgIn->CleanQueue == 1){                          // Требование прочистить очередь сообщений
+              SendMsgToTask(pntMsgIn, NULL, 0);                   // Проквитировать запрос
+              pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);  // Опять ждем сообщения
+          }
 
-            if( Ok_err == errTA )
-            {
-                pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);  // Вынимаем следующий запрос
-            }
-            else
-            {
-                // Отправляем старый запрос заново
-                debugStop();
-            }
-            if(pntMsgIn->CleanQueue == 1 ){                         // Требование прочистить очередь сообщений
+          // Формируем запрос к драйверу порта
+          size = ModbusFunc( pntMsgIn, tmpArUart.w );             // Сформировали запрос
+          ManchesterEncode( uart->bufTx, tmpArUart.w, size );     // Закодировали в Манчестер
+          uart->tx_size = size;
+          uart->state = TX_READY;                                 // Данные готовы
+          cntRepeat = 0;                                          // Инициализация счетчика повторов передачи запроса
+          sendRequest(uart);                                      //!Запустить передачу запроса в привод
+        
+      }
+      else if((uart->state == RX_READY)&&(err == OS_ERR_NONE)){     // Пришёл ответ от ПЧ
+          errTA = Ok_err;
+          
+          size = uart->rx_size;
+          ManchesterDecode( DataBuf, UartBufRx, size );             // содержимое UartBufRx копируется в DataBuf 
+          
+          errTA = SendMsgToTask(pntMsgIn, DataBuf, size );          // Анализ принятых данных
+          if((errTA == Ok_err)||(errTA == ErrReqMB)){               // Получили корректный ответ от ПЧ                                  
+              pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);    // Вынимаем следующий запрос из очереди запросов к порту
+              
+              if(pntMsgIn->CleanQueue == 1 ){                       // Требование прочистить очередь сообщений
                 SendMsgToTask(pntMsgIn, NULL, 0);                   // Проквитировать запрос
                 pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);  // Опять ждем сообщения
-            }
+              }
 
-            // Формируем запрос к драйверу порта
-            size = ModbusFunc( pntMsgIn, tmpArUart.w );             // Сформировали запрос
-            ManchesterEncode( uart->bufTx, tmpArUart.w, size );     // Закодировали в Манчестер
-            uart->tx_size = size * 2;                               // Фактический размер передачи
-            uart->state = TX_READY;                                 // Запустить передачу
-            cntRepeat = 0;
-       }
-       else if( (uart->state == RX_TIME_ERR) || err != OS_ERR_NONE ){          // Ответ не получен за положенное время
-           if( cntRepeat < MAX_REPEAT_UART ){
-               cntRepeat++;
-               uart->state = TX_READY;                              // повтор запроса
-           }
-           else{
-                // Сообщение в задачу об отказе по связи с приводом
-                cntRepeat = 0;
-                uart->state = NON_TA;
-           }
-       }
-       else{
-           // ????????????????
-       }
-    }
+              // Формируем запрос к драйверу порта
+              size = ModbusFunc( pntMsgIn, tmpArUart.w );             // Сформировали запрос
+              ManchesterEncode( uart->bufTx, tmpArUart.w, size );     // Закодировали в Манчестер
+              uart->tx_size = size;
+              uart->state = TX_READY;                                 // Данные готовы
+              cntRepeat = 0;                                          // Инициализация счетчика повторов передачи запроса
+              sendRequest(uart);                                      // Запустить передачу запроса в привод
+          }
+          else{                                                       // Ответ от ПЧ не корректный!!!
+              uart->state = RX_TIME_ERR;                             // Запрос на повторный запрос
+              OSSemPost(UARTSem);                                     // Отпустить симофор задачи
+          }
+     }
+     else if((uart->state == RX_TIME_ERR)||(err != OS_ERR_NONE)){    // Ответ не получен за положенное время
+         if(cntRepeat < MAX_REPEAT_UART){
+             cntRepeat++;                                            // Счетчик автоповторов запросов к ПЧ
+             
+             size = ModbusFunc( pntMsgIn, tmpArUart.w );             // Сформировали повторно запрос
+             ManchesterEncode( uart->bufTx, tmpArUart.w, size );     // Копируем запрос в буффер передатчика
+             uart->tx_size = size;
+             uart->state = TX_READY;                                 // Данные готовы
+             sendRequest(uart);                                      // Запустить передачу запроса в привод
+         }
+         else{                                                       // Не дождались MAX_REPEAT_UART посылок
+              cntRepeat = 0;                                         //!Сброс счетчика проходов задачи, в течении которых ждем ответ
+              uart->state = NON_TA;                                  //!Состояние первого прохода. Будем отправлять новый запрос
+              
+              // Сообщение в задачу об отказе по связи с приводом
+              pntMsgIn->Err = NonRdk_err;                            // Ошибка нет ответа
+              if(pntMsgIn->Func != WRITE_COIL ){
+                 OSQPost(QueueDrvOut, pntMsgIn);
+              }
+              else{
+                 OSQPost(QueueDrvOutStartStop, pntMsgIn);
+              }
+         }
+     }
+     else{
+         // ????????????????
+     }
+     
+     
+ /*    
+     
+     
+     
+      // Вешаем на семафоре
+     if( ((err == OS_ERR_NONE)||(uart->state == NON_TA))&&(uart->state != RX_TIME_ERR)  ){      // Получен ответ от порта или первый проход
+          errTA = Ok_err;
+          if( uart->state == RX_READY )
+          {                          // Вычитываем ответ
+              //size = uart->rx_size / 2; //!делим на 2, так как на два байта принятых данных приходится 1 значащий байт 
+              size = uart->rx_size;
+              ManchesterDecode( DataBuf, UartBufRx, size );       // содержимое UartBufRx копируется в DataBuf 
+              errTA = SendMsgToTask(pntMsgIn, DataBuf, size );    // Отправляем сообщение обратно
+          }
+
+          if( Ok_err == errTA )
+          {
+              pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);  // Вынимаем следующий запрос
+          }
+          else
+          {
+              // Отправляем старый запрос заново
+              debugStop();
+          }
+          if(pntMsgIn->CleanQueue == 1 ){                         // Требование прочистить очередь сообщений
+              SendMsgToTask(pntMsgIn, NULL, 0);                   // Проквитировать запрос
+              pntMsgIn = OSQPend(QueueDrvIn, SYS_FOREVER, &err);  // Опять ждем сообщения
+          }
+
+          // Формируем запрос к драйверу порта
+          size = ModbusFunc( pntMsgIn, tmpArUart.w );             // Сформировали запрос
+          ManchesterEncode( uart->bufTx, tmpArUart.w, size );     // Закодировали в Манчестер
+          uart->tx_size = size;
+          uart->state = TX_READY;                                 // Данные готовы
+          cntRepeat = 0;                                          // Инициализация счетчика повторов передачи запроса
+          sendRequest(uart);                                      //!Запустить передачу запроса в привод
+     }
+     else if( (uart->state == RX_TIME_ERR) || err != OS_ERR_NONE ){          // Ответ не получен за положенное время
+     if( cntRepeat < MAX_REPEAT_UART ){
+             cntRepeat++; //!счетчик проходов задачи
+             uart->state = TX_READY;                              // повтор запроса (поддержание состояния "Ждем ответ")
+         }
+         else{ //!Ответной посылки не дождались
+              // Сообщение в задачу об отказе по связи с приводом
+              cntRepeat = 0; //!Сброс счетчика проходов задачи, в течении которых ждем ответ
+              uart->state = NON_TA; //!Состояние первого прохода. Будем отправлять запрос снова
+         }
+     }
+     else{
+         // ????????????????
+     }*/
+  }
 }
 #else
 //===================================================================
@@ -268,15 +351,14 @@ Drv_err_type SendMsgToTask( MsgReqDrvIn_type *MsgIn, u8 *pBuf, u16 size )
     if(MsgIn->Err != Ok_err ){
         if( MsgIn->cntRepeat < MAX_REPEAT_UART ){
             MsgIn->cntRepeat++;
-            return  MsgIn->Err;     // Повтор запроса
+            //return  MsgIn->Err;     // Повтор запроса
         }
+        return  MsgIn->Err;           // Повтор запроса
     }
-    if(MsgIn->Func != WRITE_COIL )
-    {
+    if(MsgIn->Func != WRITE_COIL ){
         OSQPost(QueueDrvOut, MsgIn);
     }
-    else
-    {
+    else{
         OSQPost(QueueDrvOutStartStop, MsgIn);
     }
     return Ok_err;                  // Отправить сообщение обратно
@@ -337,9 +419,28 @@ Drv_err_type RequestFDP(MsgReqDrvIn_type *MsgIn, u8 AdrNet, void *Adr, u8 SzReq,
  *********************************************/
 Drv_err_type ReadVerFunct(MsgReqDrvIn_type *MsgIn, u8 AdrNet, u8 NumFile, FileFunctional_type *pFunct)
 {
-    return ReadFileFromDrv(MsgIn, AdrNet, 0, sizeof(FileFunctional_type), NumFile, pFunct, sizeof(FileFunctional_type));
-}
+    Drv_err_type        errCode = Ok_err; // Читаем файл функционала с проверкой ошибки возврата
+    u16                 crc, tmp;
+    
+    errCode = ReadFileFromDrv(MsgIn, AdrNet, 0, sizeof(FileFunctional_type), NumFile, pFunct, sizeof(FileFunctional_type));
+    
+    // Если приходит отвергнутый ответ - то надо поставить бит, что файла нету и больше его не читать
+    if (errCode == ErrReqMB) {
+        MissingFileWord |= (1 << NumFile); // Блокируем файл и возвращаем 
+        errCode = Ok_err; // успешный код операции
 
+        // Подсовываем системе "липовый" функционал, чтобы она считала что все в порядке.
+        pFunct->curFunct.functMask = FULL_FUNCTIONAL_MASK; // Маска при отсутствии функционала !*!*!
+        tmp = swapU16(pFunct->curFunct.functMask);
+        crc = GetCrc(&tmp, sizeof(u16)); // Вычисляем CRC и подсовываем в структуру
+        pFunct->crc = crc;
+    }
+    else { // Если файл существует - сбросить бит в статусе наличия файлов
+      MissingFileWord &= ~(1 << NumFile); // 
+    }
+  
+    return (errCode); // Возврат ошибки
+}
 /*********************************************
  * Формирование запроса на чтение индексов   *
  * журнала                                   *
@@ -429,6 +530,30 @@ Drv_err_type ReadJrnIndex(MsgReqDrvIn_type *MsgIn, u8 AdrNet, u8 NumFile, Index_
     return ReQuestDrv(QueueDrvIn, MsgIn);
 #endif
 }*/
+
+//-----------------------------------------------------------------------------
+// Чтение текущих параметров с ПЧ пачками по 125 штук 0х67 функцией
+
+Drv_err_type ReadTekAllPrmFromDrv(MsgReqDrvIn_type *MsgIn, u32 AdrData, void *Buf, u16 SzData)
+{
+    MsgIn->AdrNet   = 0x01;
+    MsgIn->AdrData  = (u32)AdrData;
+    MsgIn->Param    = 0;
+    MsgIn->Sz       = SzData;
+
+    MsgIn->Func     = READ_H_REGS;
+    MsgIn->Buf      = Buf;
+    MsgIn->SzBuf    = SzData*2;
+    
+#ifndef _PROJECT_IAR_ 
+    MsgIn->countByteRead = 10 + SzData;  // Ожидаем по колич данных
+#endif
+    
+    return ReQuestDrv(QueueDrvIn, MsgIn);;
+}
+
+
+
 
 //---------------------------------------------------
 Drv_err_type ReadFileFromDrv(MsgReqDrvIn_type *MsgIn, u8 AdrNet, void *Adr, u8 SzReq, u8 NumFile, void *Buf, u16 SzBuf)
@@ -744,75 +869,60 @@ s32 SendS16Prm(s16 GrpPrm, s16 Val)
 //====================================================================
 //  Формирование запросов на чтение типа языка
 //====================================================================
-void ReqLanguage(void)
+u8 ReqLanguage(void)
 {
   Drv_err_type            drvErr;
-    MsgReqDrvIn_type        reqMsgReqDrvIn = {0};
-    LnkNetFDP_type          LnkNetFDP;
-    u8                      Buf[16];
-    char                    strtmp[100];
-    
-    u8						cntRepeat;
+  MsgReqDrvIn_type        reqMsgReqDrvIn = {0};
+  LnkNetFDP_type          LnkNetFDP;
+  u8                      Buf[16];
 
-	cntRepeat = 0;
-    
-    if (gIsNvsaOld)
-    {
-        return;
-    }
+  if (gIsNvsaOld){
+      return 1;                     // У нас один язык - выходим
+  }
 
-    if (ReadLnk(&LnkNetFDP, 0)) {
-        reqMsgReqDrvIn.AdrNet = LnkNetFDP.NetAdr;
-    }
-    else{
-//        MessageCancel("Сеть не установлена");
-        reqMsgReqDrvIn.AdrNet = 1;
-    }
+  if (ReadLnk(&LnkNetFDP, 0)) {
+      reqMsgReqDrvIn.AdrNet = LnkNetFDP.NetAdr;
+  }
+  else{
+  //        MessageCancel("Сеть не установлена");
+      reqMsgReqDrvIn.AdrNet = 1;
+  }
 
-    reqMsgReqDrvIn.Sz       = 1;
-    reqMsgReqDrvIn.Func     = READ_H_REGS;
+  reqMsgReqDrvIn.Sz       = 1;
+  reqMsgReqDrvIn.Func     = READ_H_REGS;
 
-    reqMsgReqDrvIn.Buf      = &Buf[0];
-    reqMsgReqDrvIn.SzBuf    = sizeof(Buf);
+  reqMsgReqDrvIn.Buf      = &Buf[0];
+  reqMsgReqDrvIn.SzBuf    = sizeof(Buf);
 
-#ifndef _PROJECT_IAR_ 
-    reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
-#endif
+  #ifndef _PROJECT_IAR_ 
+  reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
+  #endif
     reqMsgReqDrvIn.AdrData  = ADDR_LANGUAGE;
 
-    cntRepeat = 2;
-	while(1){
-	    drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
-	    if( drvErr != Ok_err ){
-	    	cntRepeat--;
-			if( cntRepeat == 0 ){ 	// Пароль не вычитан
-				return;
-			}
-	        sprintf(&strtmp[0], GetStringMess(MessageMess_ERROR_CONECT));
-	        MessageCancel( strtmp );
-	    }
-	    else{
-	        TypeLanguage = swapU16(*(u16 *)&Buf[0]);
-	        break;
-	    }
-	}
+  drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
+  if( drvErr != Ok_err ){
+     return 0;                                           // Тип языка не прочитан                                
+  }
+  else{
+      TypeLanguage = swapU16(*(u16 *)&Buf[0]);
+      return 1;                                          // Тип языка прочитан
+  }
 }
 //====================================================================
 //  Формирование запросов на чтение паролей из привода 
 //====================================================================
-void ReqEtalonPassword(void)
+u8 ReqEtalonPassword(void)
 {
+    // Проверяем - если группа паролей отсутствует, то не зачем долбить ПЧ 
+//    if (GrpPassword == GRP_NOT_FOUND)
+//       return;
+
     Drv_err_type            drvErr;
     MsgReqDrvIn_type        reqMsgReqDrvIn = {0};
     LnkNetFDP_type          LnkNetFDP;
     u8                      Buf[16];
     u8                      Err = 0;
-    char                    strtmp[100];
-    
-    u8						cntRepeat;
-
-	cntRepeat = 0;
-
+            
     if (ReadLnk(&LnkNetFDP, 0)) {
         reqMsgReqDrvIn.AdrNet = LnkNetFDP.NetAdr;
     }
@@ -834,24 +944,16 @@ void ReqEtalonPassword(void)
 //        MessageThrough("Чтение паролей");
     reqMsgReqDrvIn.AdrData  = ADDR_ETALON_USER;
 
-    cntRepeat = 2;
-	while(1){
-	    drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
-	    if( drvErr != Ok_err ){
-	    	cntRepeat--;
-			if( cntRepeat == 0 ){ 	// Пароль не вычитан
-				return;
-			}
-
-	        sprintf(&strtmp[0], GetStringMess(MessageMess_ERROR_CONECT));
-	        MessageCancel( strtmp );
-	    }
-	    else{
-	        AllPrmPnt->ETALON_USER = swapU16(*(u16 *)&Buf[0]);
-	        Err = 0;
-	        break;
-	    }
-	}
+    	
+    drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
+    if( drvErr != Ok_err ){
+        return 1;
+    }
+    else{
+        AllPrmPnt->ETALON_USER = swapU16(*(u16 *)&Buf[0]);
+        Err = 0;
+    }
+	
 
 #ifndef _PROJECT_IAR_ 
     reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
@@ -859,9 +961,9 @@ void ReqEtalonPassword(void)
     reqMsgReqDrvIn.AdrData  = ADDR_USER;
     drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
 
-        if( drvErr == Ok_err ){
-            AllPrmPnt->PASSW_USER = swapU16(*(u16 *)&Buf[0]);
-        }
+    if( drvErr == Ok_err ){
+        AllPrmPnt->PASSW_USER = swapU16(*(u16 *)&Buf[0]);
+    }
 
 #ifndef _PROJECT_IAR_ 
     reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
@@ -869,13 +971,13 @@ void ReqEtalonPassword(void)
     reqMsgReqDrvIn.AdrData  = ADDR_ETALON_TEXN;
     drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
 
-        if( drvErr == Ok_err ){
-            AllPrmPnt->ETALON_TEXN = swapU16(*(u16 *)&Buf[0]);
-            Err &= ~2;
-        }
-        else{
-            Err |= 2;
-        }
+    if( drvErr == Ok_err ){
+        AllPrmPnt->ETALON_TEXN = swapU16(*(u16 *)&Buf[0]);
+        Err &= ~2;
+    }
+    else{
+        Err |= 2;
+    }
         
 #ifndef _PROJECT_IAR_ 
     reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
@@ -883,22 +985,22 @@ void ReqEtalonPassword(void)
     reqMsgReqDrvIn.AdrData  = ADDR_TEXN;
     drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
 
-        if( drvErr == Ok_err ){
-            AllPrmPnt->PASSW_TEXN = swapU16(*(u16 *)&Buf[0]);
-        }
+    if( drvErr == Ok_err ){
+        AllPrmPnt->PASSW_TEXN = swapU16(*(u16 *)&Buf[0]);
+    }
 
 #ifndef _PROJECT_IAR_ 
     reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
 #endif
         reqMsgReqDrvIn.AdrData  = ADDR_ETALON_MASTER;
-        drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
-        if( drvErr == Ok_err ){
-            AllPrmPnt->ETALON_MASTER = swapU16(*(u16 *)&Buf[0]);
-            Err &= ~4;
-        }
-        else{
-            Err |= 4;
-        }
+    drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
+    if( drvErr == Ok_err ){
+        AllPrmPnt->ETALON_MASTER = swapU16(*(u16 *)&Buf[0]);
+        Err &= ~4;
+    }
+    else{
+        Err |= 4;
+    }
         
 #ifndef _PROJECT_IAR_ 
     reqMsgReqDrvIn.countByteRead = reqMsgReqDrvIn.Sz*2 + 5;  // Ожидаем по колич данных
@@ -906,13 +1008,16 @@ void ReqEtalonPassword(void)
     reqMsgReqDrvIn.AdrData  = ADDR_MASTER;
     drvErr = ReQuestDrv(QueueDrvIn, &reqMsgReqDrvIn);
 
-        if( drvErr == Ok_err ){
-            AllPrmPnt->PASSW_MASTER = swapU16(*(u16 *)&Buf[0]);
-        }
-
-    if (Err) {
-        MessageCancel(GetStringMess(MessageMess_ERROR_CONECT));
+    if( drvErr == Ok_err ){
+        AllPrmPnt->PASSW_MASTER = swapU16(*(u16 *)&Buf[0]);
     }
+
+    //#warning А ЗАЧЕМ ЗДЕСЬ ДЕЛАТЬ ПРОВЕРКУ СВЯЗИ? А ЕСЛИ ПАРОЛЕЙ НЕТУ, ТО КАК БЫТЬ???
+    if (Err) {
+      return 1;  
+      //MessageCancel(GetStringMess(MessageMess_ERROR_CONECT));
+    }
+    return 0;
 }
 /*********************************************
  * Формирование запроса на параметра         *

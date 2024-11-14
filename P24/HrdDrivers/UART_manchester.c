@@ -21,6 +21,7 @@ extern unsigned short SizeRX;
 #define UART1_GPIO_TX		GPIO_Pin_6
 #define UART1_GPIO_RX		GPIO_Pin_7
 #define UART1_GPIO		GPIOB
+#define DIRECTION               GPIO_Pin_5
 
 // перекидывание ног если надо(смотреть по даташиту там есть таблица допустимых конфигураций)
 #define UART1_GPIO_SOURCE_TX	GPIO_PinSource6
@@ -38,6 +39,15 @@ extern unsigned short SizeRX;
 #define UART1_DMA_CHANNEL_TX    DMA_Channel_4
 #define UART1_RX_DMA		    DMA2_Stream5
 #define UART1_TX_DMA		    DMA2_Stream7
+
+#define FROM_PULT Bit_SET
+#define TO_PULT Bit_RESET
+
+#define NUM_WAIT_TIKS_REQ 60000 //Тики для выдержки перед отправкой запроса в привод
+#define NUM_WAIT_TIKS_READ 5000 //Тики для выдержки перед переключением микросхемы драйвера на прием
+
+#define WAIT_BEFORE_REQUEST() for(i = 0; i < NUM_WAIT_TIKS_REQ; i++){;} //!выдержка перед отправкой запроса в привод
+#define WAIT_BEFORE_READ_EN() for(i = 0; i < NUM_WAIT_TIKS_READ; i++){;} //!выдержка перед переключением микросхемы драйвера на чтение
 
 // внутренние обьекты
 void rt_hw_serial_isr( portUart_type *dev );
@@ -64,7 +74,7 @@ portUart_type uart1 =
 	RX_READY,                       // stateUart_type     				state;
 	WaiteIdleEnd,                  	// stateUartTransaction_type		stateTA;
     MINC_DISABLE,                   // u32                              minc;
-    time9(10.0),                    // u16                              timeWaiteRx;    // Время ожидания ответа
+    time9(300),//time9(10.0),                    // u16                              timeWaiteRx;    // Время ожидания ответа
 };
 #endif  // USING_UART1
 
@@ -105,6 +115,14 @@ static void GPIO_Configuration(void)
     // Connect Pin to AF
     GPIO_PinAFConfig(UART1_GPIO, UART1_GPIO_SOURCE_TX, GPIO_AF_USART1);
     GPIO_PinAFConfig(UART1_GPIO, UART1_GPIO_SOURCE_RX, GPIO_AF_USART1);
+    
+    /**Настройка пина выбора направления передачи**/
+    GPIO_InitStruct.GPIO_Mode  = GPIO_Mode_OUT;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;//тяни-толкай..
+    GPIO_InitStruct.GPIO_PuPd  = GPIO_PuPd_NOPULL; //..ни к чему не подтянутый
+    GPIO_InitStruct.GPIO_Pin = DIRECTION;
+    GPIO_Init(UART1_GPIO,&GPIO_InitStruct);
 #endif  // USING_UART1
 }
 //===================================================================
@@ -200,7 +218,7 @@ void rt_hw_usart_init(void)
     // uart init
 #ifdef USING_UART1
     USART_DeInit(uart1.reg);
-    USART_InitStructure.USART_BaudRate            = 230400uL; //115200; // позже надо вынести в параметр
+    USART_InitStructure.USART_BaudRate            = 115200uL; //230400uL; // позже надо вынести в параметр
     USART_InitStructure.USART_WordLength          = USART_WordLength_8b;
     USART_InitStructure.USART_StopBits            = USART_StopBits_1;
     USART_InitStructure.USART_Parity              = USART_Parity_No ;
@@ -305,6 +323,7 @@ void rt_hw_serial_isr( portUart_type *uart)
 //    struct stm32_uart_device *uart;
     volatile u8             temp;   // Регистр для холостого чтения данных
     u16                     cntRxData;
+    u16 j;
 
 //    device_copy = dev;
 //    configASSERT(dev != RT_NULL);
@@ -332,7 +351,7 @@ void rt_hw_serial_isr( portUart_type *uart)
                 uart->stateTA = WaiteRxEnd;
                 USART_DMA_Start_TX(uart);   // Запускаем передатчик
 
-                TIMuartWdStart(time9( uart->timeWaiteRx ));
+                TIMuartWdStart(uart->timeWaiteRx/*time9( uart->timeWaiteRx )*/);
             }
             else{
                 startRxIdle(uart);
@@ -340,10 +359,10 @@ void rt_hw_serial_isr( portUart_type *uart)
         }
         else{                               // Ждем ответа
             TIMuartWdSop();                 // Ответ пришел остановим таймер
-
+            uart->stateTA = WaiteIdleEnd;
             cntRxData = (uart->size_buf) - uart->dma_rx->NDTR; // количество принятых байт полезной посылки
             uart->rx_size = cntRxData;
-            startRxIdle(uart);
+            //startRxIdle(uart);
             uart1.state = RX_READY;
             OSSemPost(UARTSem);             // Сообщение в задачу
         }
@@ -354,21 +373,39 @@ void rt_hw_serial_isr( portUart_type *uart)
         uart->state = TX_COMPLETE;          // Прочищаем запрос
 
         uart->reg->SR  = 0x00;              // Прочистить все флаги
-
-        uart->reg->CR3 &= ~USART_CR3_DMAT;
-        uart->reg->CR1 &= ~USART_CR1_TCIE;
-        uart->reg->CR1 |= USART_CR1_RE;
+        uart->reg->CR1 &= ~USART_CR1_TCIE;                
+        uart->reg->SR  &= (~USART_SR_TC);  
+        while(!DMA_GetFlagStatus(UART1_TX_DMA, DMA_FLAG_TCIF7)){ //!Ждем установку флага завершения передачи по каналу DMA
+          ;
+        }
+        uart->reg->CR3 &= ~USART_CR3_DMAT;        
+       // uart->reg->CR1 |= USART_CR1_RE;
 
 //        uart->reg->SR  &= (~USART_SR_TC);
-
         startRxReceive(uart);               // Ждем ответа
     }
 }
 
 #ifdef USING_UART1
+
+
+
+//!функция отправки запроса в привод
+void sendRequest(portUart_type *uart){          //!функция вызывается из задачи TskDRV
+  s32 i;                                        //для макроса WAIT_BEFORE_REQUEST
+  if(uart->stateTA == WaiteIdleEnd){            //Если можно отправлять запрос в привод
+    uart->stateTA = WaiteRxEnd;                 //Следующее прерывание по idle будет по причине принятого с привода ответа              
+    GPIO_WriteBit(GPIOB, DIRECTION, FROM_PULT); //Переключаем драйвер на передачу
+    WAIT_BEFORE_REQUEST();                      //Выдержка перед запуском передатчика ~4ms
+    USART_DMA_Start_TX(uart);                   //Запускаем передатчик
+    TIMuartWdStart(uart->timeWaiteRx/*time9( uart->timeWaiteRx )*/); //Запуск таймера ожидания ответа
+  }
+}
+
+
 //===================================================================
 //===================================================================
-inline void TIMuartWdStart( u16 timeStop )
+inline void TIMuartWdStart( u32 timeStop )
 {
     TIM9->ARR = timeStop;
     TIM_Cmd(TIM9, ENABLE);                      // Включить таймер
@@ -401,11 +438,12 @@ inline void startRxIdle( portUart_type *uart)
 //===================================================================
 inline void startRxReceive( portUart_type *uart)
 {
+    u16 i = 0;                  //Для макроса WAIT_BEFORE_READ_EN
     uart->stateTA = WaiteRxEnd;
-
-    uart->bufRx = UartBufRx;       // Переопределить адрес
-    uart->minc  = MINC_ENABLE;      // MINC = 1
-
+    uart->bufRx = UartBufRx;   // Переопределить адрес
+    uart->minc  = MINC_ENABLE; // MINC = 1 
+    WAIT_BEFORE_READ_EN();     // Выдержка перед переключением микросхемы драйвера на прием
+    GPIO_WriteBit(GPIOB, DIRECTION, TO_PULT); //Переключаем драйвер на прием
     USART_DMA_Start_RX(uart);       // Запускаем приемник
 }
 //===================================================================
@@ -434,7 +472,7 @@ void TIM9MicroInit(void)
     DBGMCU_APB1PeriphConfig(DBGMCU_TIM9_STOP, ENABLE);
 
     TIM_TimeBaseStructure.TIM_Prescaler       = (tim9PSinit-1);//  60000 * 4;//4мс
-    TIM_TimeBaseStructure.TIM_Period          = time9( 4.5 );
+    TIM_TimeBaseStructure.TIM_Period          = time9( 300 );//time9( 4.5 );
 
     TIM_TimeBaseStructure.TIM_ClockDivision   = 0;
     TIM_TimeBaseStructure.TIM_CounterMode     = TIM_CounterMode_Up;
@@ -461,7 +499,8 @@ void TIM1_BRK_TIM9_IRQHandler(void)
     OSIntEnter ();
 
         TIMuartWdSop();
-        startRxIdle(&uart1);
+        //startRxIdle(&uart1);
+        uart1.stateTA = WaiteIdleEnd;
 
         uart1.state = RX_TIME_ERR;      // Ошибка приема
         OSSemPost(UARTSem);             // Сообщение в задачу

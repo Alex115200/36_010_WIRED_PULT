@@ -53,7 +53,7 @@ Full_MenuDescriptorPrm_type     MDPDrive;
 Full_DescriptorPrm_type         DPDriveStatus;
 
 char                            StrOut[256];
-
+u8                              CURRENT_COUNT_STATUS;
 static u8                       flag_from_status_word2 = 0;
 
 DescriptorMenuOld_type             *DMGlobalOld[MAX_NUM_MENU];             
@@ -136,7 +136,7 @@ void (*const FuncViewEditParam[])(wm_type *, char *) = {
 u32 (*const FuncEditParam[])(void *BaseHOF, Full_DescriptorPrm_type *DPDrive, wm_type *wm, char *Str) = {
     NULL,           					//sec2Frmt
     &TextToStrEdit, 					//NtxtFrmt
-    &HexToStrEdit,    					//Hex16Frmt
+    NULL,           					//Hex16Frmt
     &UIntToStrEdit, 					//int16Frmt
     &HMorMSorMDToStrEdit,  				//HourMinFrmt
     &HMorMSorMDToStrEdit,  				//MinSecFrmt
@@ -212,6 +212,46 @@ u8 GetLastDrvAdr(void)
     return lastDrvAdr;
 }
 //===================================================================
+// Работа со статусом связи с ПЧ
+u8 StatLinkDRV = 0;
+u8 FlagResetGid = 0;
+
+// Установить аварию связи
+void SetErrLinkDRV(void){
+    StatLinkDRV = 1;        // Установить флаг аварии
+}
+
+// Получить статус связи с ПЧ
+u8 GetStatLinkDRV(void){
+  if(StatLinkDRV){
+    StatLinkDRV = 0;        // При наличии аварии сбросим бит аварии
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}
+
+
+
+// Мигаем лампой авария
+void BlinkErr(void){
+  LEDState_type   led;
+  static u8       CountBlinkErr;
+    
+  CountBlinkErr++;
+  if(CountBlinkErr > 1){
+    CountBlinkErr = 0;
+    ledOff(led);
+    ledFaultOn(led);
+  }
+  else{
+    ledOff(led);
+  }
+  LEDState = led;
+}
+
+
 
 //--------------------------------------
 u32 newMode;
@@ -269,6 +309,12 @@ uint8_t IsNvsaOld(void)
     u16                 crc;
     u8                  netAdr;
     Drv_err_type        code;
+    
+    crc = sizeof (HOF_L);
+    crc = sizeof (HOF_L_Old);
+//    crc = sizeof (HOF_L_Spec_Old);
+//    crc = sizeof (HOF_L_Spec);    
+      
     
     gIsNvsaOld = 0xFF;
     netAdr = 1;
@@ -387,6 +433,7 @@ void HandlerMenuPult(void)
     OpisDrv_type OpisDrv;
     //void            *BaseHOF;
     keyName_type    Key;
+    LEDState_type   led;
     u32             i;
     u16             cnt5Min;
     u16             cnt10Sec;

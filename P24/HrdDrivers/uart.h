@@ -104,7 +104,7 @@ void rt_hw_usart_init(void);
 inline void startRxIdle(portUart_type *uart);
 inline void startRxReceive(portUart_type *uart);
 
-inline void TIMuartWdStart( u16 );
+inline void TIMuartWdStart( u32 );
 inline void TIMuartWdSop(void);
 
 #endif // UART_H
